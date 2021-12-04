@@ -68,7 +68,7 @@
 [f 0 8 65278][f 1 31][f 2 9 5 73]That wheel's effects depend on[n]where it stops.[n][f 2 7 10][f 0 4][e]
 
 [msg MSG_0074 [Fuuka]]
-[f 0 8 65278][f 1 31][f 2 11 5 74]Red is bad luck...  I hope it doesn't[n]come up.[n][f 2 7 10][f 0 4][e]
+[f 0 8 65278][f 1 31][f 2 11 5 74]Red is bad luck...I hope it doesn't[n]come up.[n][f 2 7 10][f 0 4][e]
 
 [msg MSG_0076 [Fuuka]]
 [f 0 8 65278][f 1 31][f 2 9 5 76]Um, I detect Fortune again! So you can[n]attack that one now![n][f 2 7 10][f 0 4][e]
@@ -185,7 +185,7 @@
 [f 0 8 65278][f 1 31][f 2 9 5 924][f 0 31 18 10 4 1]...Damn you! You've covered up[n]all your weaknesses![n][f 2 7 10][f 0 4][e]
 
 [msg MSG_0792 [Jin]]
-[f 0 8 65278][f 1 31][f 2 11 5 925][f 0 31 18 10 4 1]Are you too afraid  to face them?[n][f 2 7 10][f 0 4][e]
+[f 0 8 65278][f 1 31][f 2 11 5 925][f 0 31 18 10 4 1]Are you too afraidto face them?[n][f 2 7 10][f 0 4][e]
 
 [msg MSG_0793 [Jin]]
 [f 0 8 65278][f 1 31][f 2 9 5 926][f 0 31 18 10 3 1]Tch, you think you're tough?[n]I won't lose this time![n][f 2 7 10][f 0 4][e]
