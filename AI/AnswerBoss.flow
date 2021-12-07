@@ -9,7 +9,7 @@
 // Imports
 // 
 
-import( "AAI.flow.bf.msg" );
+import( "AnswerBoss.msg" );
 
 // 
 // Procedure declarations
@@ -12511,7 +12511,7 @@ void AI_Shadow_hero_AIGISU()
         if ( var140 < 30 )
         {
             
-            if ( ( ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 ) )
+            if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
             {
                 AI_ACT_PERSONA( 225, 239 );
                 AI_TAR_RND();
@@ -12566,7 +12566,7 @@ void AI_Shadow_hero_AIGISU()
             AI_TAR_RND();
             return;
         }
-        else if ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 ) || ( AI_CHK_ENEMIES_EFFECT( 40 ) == 0 ) ) || ( AI_CHK_ENEMIES_EFFECT( 80 ) == 0 ) )
+        else if ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 )
         {
             AI_ACT_PERSONA( 225, 250 );
             AI_TAR_RND();
@@ -12583,7 +12583,7 @@ void AI_Shadow_hero_AIGISU()
     else if ( var140 < 30 )
     {
         
-        if ( ( ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 ) )
+        if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
         {
             AI_ACT_PERSONA( 225, 239 );
             AI_TAR_RND();
@@ -12847,7 +12847,7 @@ void AI_Shadow_hero_SANADA()
     else if ( var144 < 90 )
     {
         
-        if ( ( ( AI_CHK_ALLY_EFFECT( SpecialEffects.AttackDebuff ) == 1 ) || ( AI_CHK_ALLY_EFFECT( SpecialEffects.DefenseDebuff ) == 1 ) ) || ( AI_CHK_ALLY_EFFECT( SpecialEffects.HitUpDebuff ) == 1 ) )
+        if ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 )
         {
             AI_ACT_WEAPON();
             AI_TAR_RND();

@@ -9,7 +9,7 @@
 // Imports
 // 
 
-import( "JAI.flow - Copy.bf.msg" );
+import( "JourneyBoss.msg" );
 
 // 
 // Procedure declarations
@@ -5787,23 +5787,10 @@ void AI_Jin1()
             AI_TAR_RND();
             return;
         }
-        else if ( ( ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 ) )
+        else if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
         {
             AI_ACT_SKILL( 239 );
-            
-            if ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 )
-            {
-                AI_DONT_TAR_EFFECT( SpecialEffects.HitUpBuff );
-            }
-            else if ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 )
-            {
-                AI_DONT_TAR_EFFECT( 5 );
-            }
-            else if ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 )
-            {
-                AI_DONT_TAR_EFFECT( SpecialEffects.DefenseBuff );
-            }
-
+            AI_DONT_TAR_EFFECT( 81 );
             return;
         }
         else 
@@ -5832,23 +5819,10 @@ void AI_Jin1()
         AI_TAR_RND();
         return;
     }
-    else if ( ( ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 ) )
+    else if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
     {
         AI_ACT_SKILL( 239 );
-        
-        if ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 )
-        {
-            AI_DONT_TAR_EFFECT( SpecialEffects.HitUpBuff );
-        }
-        else if ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 )
-        {
-            AI_DONT_TAR_EFFECT( 5 );
-        }
-        else if ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 )
-        {
-            AI_DONT_TAR_EFFECT( SpecialEffects.DefenseBuff );
-        }
-
+        AI_DONT_TAR_EFFECT( 81 );
         return;
     }
     else 
@@ -7079,7 +7053,7 @@ void AI_Chidori()
                 AI_TAR_RND();
                 return;
             }
-            else if ( ( var41 < ( 25 + 20 ) ) && ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 0 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff ) == 0 ) ) )
+            else if ( ( var41 < ( 25 + 20 ) ) && ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 ) )
             {
                 AI_ACT_SKILL( 250 );
                 AI_TAR_RND();
@@ -7154,7 +7128,7 @@ void AI_Chidori()
                 AI_TAR_SELF();
                 return;
             }
-            else if ( ( var42 < ( ( 20 + 20 ) + 20 ) ) && ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 0 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff ) == 0 ) ) )
+            else if ( ( var42 < ( ( 20 + 20 ) + 20 ) ) && ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 ) )
             {
                 AI_ACT_SKILL( 250 );
                 AI_TAR_RND();
@@ -7246,7 +7220,7 @@ void AI_Chidori()
                 AI_TAR_SELF();
                 return;
             }
-            else if ( ( var43 < ( ( ( 20 + 20 ) + 20 ) + 20 ) ) && ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 0 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff ) == 0 ) ) )
+            else if ( ( var43 < ( ( ( 20 + 20 ) + 20 ) + 20 ) ) && ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 ) )
             {
                 AI_ACT_SKILL( 250 );
                 AI_TAR_RND();
@@ -7675,7 +7649,7 @@ void AI_Takaya2()
     if ( AI_CHK_ONE_MORE() == 1 )
     {
         
-        if ( ( ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 ) )
+        if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
         {
             AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
             AI_ACT_SKILL( 239 );
@@ -7906,7 +7880,7 @@ void AI_Takaya2()
                 AI_TAR_RND();
                 return;
             }
-            else if ( ( ( ( var52 < ( ( ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) + 15 ) + 15 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff ) != -1 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff ) != -1 ) )
+            else if ( ( var52 < ( ( ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) + 15 ) + 15 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 ) )
             {
                 AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
                 AI_ACT_SKILL( 239 );
