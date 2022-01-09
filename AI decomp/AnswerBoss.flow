@@ -8724,7 +8724,7 @@ void AI_ROYAL_AEGIS()
     
     if ( AI_CHK_ENEMY_STATUS( StatusEffects.Despair ) == 1 )
     {
-        AI_ACT_SKILL( BattleSkill.HeatWave );
+        AI_ACT_SKILL( 157 );
         AI_TAR_RND();
         return;
     }
@@ -8736,7 +8736,7 @@ void AI_ROYAL_AEGIS()
         
         if ( var97 < 30 )
         {
-            AI_ACT_SKILL( BattleSkill.HeatWave );
+            AI_ACT_SKILL( 157 );
             AI_TAR_RND();
             return;
         }
@@ -8751,7 +8751,7 @@ void AI_ROYAL_AEGIS()
             }
             else 
             {
-                AI_ACT_SKILL( BattleSkill.HeatWave );
+                AI_ACT_SKILL( 157 );
                 AI_TAR_RND();
                 return;
             }
@@ -8768,7 +8768,7 @@ void AI_ROYAL_AEGIS()
             }
             else 
             {
-                AI_ACT_SKILL( BattleSkill.HeatWave );
+                AI_ACT_SKILL( 157 );
                 AI_TAR_RND();
                 return;
             }
@@ -8784,7 +8784,7 @@ void AI_ROYAL_AEGIS()
     }
     else if ( var98 < 35 )
     {
-        AI_ACT_SKILL( BattleSkill.HeatWave );
+        AI_ACT_SKILL( 157 );
         AI_TAR_RND();
         return;
     }
@@ -8799,7 +8799,7 @@ void AI_ROYAL_AEGIS()
         }
         else 
         {
-            AI_ACT_SKILL( BattleSkill.HeatWave );
+            AI_ACT_SKILL( 157 );
             AI_TAR_RND();
             return;
         }
@@ -8816,7 +8816,7 @@ void AI_ROYAL_AEGIS()
         }
         else 
         {
-            AI_ACT_SKILL( BattleSkill.HeatWave );
+            AI_ACT_SKILL( 157 );
             AI_TAR_RND();
             return;
         }
@@ -9080,7 +9080,7 @@ void AI_BRAVE_AEGIS()
             }
             else 
             {
-                AI_ACT_SKILL( BattleSkill.FatalEnd );
+                AI_ACT_SKILL( 156 );
                 AI_TAR_RND();
                 return;
             }
@@ -9088,7 +9088,7 @@ void AI_BRAVE_AEGIS()
         }
         else 
         {
-            AI_ACT_SKILL( BattleSkill.FatalEnd );
+            AI_ACT_SKILL( 156 );
             AI_TAR_RND();
             return;
         }
@@ -9265,7 +9265,7 @@ void AI_HANKETU_AEGIS()
             }
             else 
             {
-                AI_ACT_SKILL( BattleSkill.MightySwing );
+                AI_ACT_SKILL( 155 );
                 AI_TAR_RND();
                 return;
             }
@@ -9273,7 +9273,7 @@ void AI_HANKETU_AEGIS()
         }
         else 
         {
-            AI_ACT_SKILL( BattleSkill.MightySwing );
+            AI_ACT_SKILL( 155 );
             AI_TAR_RND();
             return;
         }
@@ -10258,7 +10258,17 @@ void AI_KYOUKI_AEGIS()
 // Procedure Index: 200
 void AI_KYOEIM_AEGIS()
 {
+    int var119;
+    int var120;
+    int var121;
+    int var122;
     int var118;
+    int var123;
+    int var124;
+    var119 = 0;
+    var120 = 0;
+    var121 = 0;
+    var122 = 0;
     var118 = AI_RND( 100 );
     
     if ( AI_CHK_ONE_MORE() == 1 )
@@ -10268,6 +10278,36 @@ void AI_KYOEIM_AEGIS()
         return;
     }
 
+    var123 = 0;
+    
+    if ( FUNCTION_0053( 3 ) == 1 )
+    {
+        var123 = ( var123 + 1 );
+        var119 = ( var119 + var123 );
+    }
+
+    
+    if ( FUNCTION_0053( 4 ) == 1 )
+    {
+        var123 = ( var123 + 1 );
+        var120 = ( var120 + var123 );
+    }
+
+    
+    if ( FUNCTION_0053( 5 ) == 1 )
+    {
+        var123 = ( var123 + 1 );
+        var121 = ( var121 + var123 );
+    }
+
+    
+    if ( FUNCTION_0053( 6 ) == 1 )
+    {
+        var123 = ( var123 + 1 );
+        var122 = ( var122 + var123 );
+    }
+
+    var124 = ( AI_RND( var123 ) + 1 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
@@ -10284,46 +10324,28 @@ void AI_KYOEIM_AEGIS()
             if ( ( ( ( FUNCTION_0053( 3 ) == 1 ) || ( FUNCTION_0053( 4 ) == 1 ) ) || ( FUNCTION_0053( 5 ) == 1 ) ) || ( FUNCTION_0053( 6 ) == 1 ) )
             {
                 
-                if ( ( var118 < 25 ) && ( FUNCTION_0053( 3 ) == 1 ) )
+                if ( var123 == var119 )
                 {
                     AI_ACT_SKILL( BattleSkill.Agi );
                     AI_TAR_WEAK( Affinity.Fire );
                     return;
                 }
-                else if ( ( var118 < 50 ) && ( FUNCTION_0053( 4 ) == 1 ) )
+                else if ( var123 == var120 )
                 {
                     AI_ACT_SKILL( BattleSkill.Bufu );
                     AI_TAR_WEAK( Affinity.Ice );
                     return;
                 }
-                else if ( ( var118 < 75 ) && ( FUNCTION_0053( 5 ) == 1 ) )
+                else if ( var123 == var121 )
                 {
                     AI_ACT_SKILL( BattleSkill.Zio );
                     AI_TAR_WEAK( Affinity.Elec );
                     return;
                 }
-                else if ( ( var118 <= 100 ) && ( FUNCTION_0053( 6 ) == 1 ) )
+                else if ( var123 == var122 )
                 {
                     AI_ACT_SKILL( BattleSkill.Garu );
                     AI_TAR_WEAK( Affinity.Wind );
-                    return;
-                }
-                else if ( ( var118 >= 25 ) && ( FUNCTION_0053( 3 ) == 1 ) )
-                {
-                    AI_ACT_SKILL( BattleSkill.Agi );
-                    AI_TAR_WEAK( Affinity.Fire );
-                    return;
-                }
-                else if ( ( var118 >= 50 ) && ( FUNCTION_0053( 4 ) == 1 ) )
-                {
-                    AI_ACT_SKILL( BattleSkill.Bufu );
-                    AI_TAR_WEAK( Affinity.Ice );
-                    return;
-                }
-                else if ( ( var118 >= 75 ) && ( FUNCTION_0053( 5 ) == 1 ) )
-                {
-                    AI_ACT_SKILL( BattleSkill.Zio );
-                    AI_TAR_WEAK( Affinity.Elec );
                     return;
                 }
 
@@ -10424,25 +10446,25 @@ void AI_KYOEIM_AEGIS()
             AI_TAR_RND();
             return;
         }
-        else if ( ( var118 < 25 ) && ( FUNCTION_0053( 3 ) == 1 ) )
+        else if ( var123 == var119 )
         {
             AI_ACT_SKILL( BattleSkill.Agi );
             AI_TAR_WEAK( Affinity.Fire );
             return;
         }
-        else if ( ( var118 < 50 ) && ( FUNCTION_0053( 4 ) == 1 ) )
+        else if ( var123 == var120 )
         {
             AI_ACT_SKILL( BattleSkill.Bufu );
             AI_TAR_WEAK( Affinity.Ice );
             return;
         }
-        else if ( ( var118 < 75 ) && ( FUNCTION_0053( 5 ) == 1 ) )
+        else if ( var123 == var121 )
         {
             AI_ACT_SKILL( BattleSkill.Zio );
             AI_TAR_WEAK( Affinity.Elec );
             return;
         }
-        else if ( FUNCTION_0053( 6 ) == 1 )
+        else if ( var123 == var122 )
         {
             AI_ACT_SKILL( BattleSkill.Garu );
             AI_TAR_WEAK( Affinity.Wind );
@@ -10505,19 +10527,19 @@ void AI_KYOEIM_AEGIS()
 // Procedure Index: 201
 void AI_TINOHE_AEGIS()
 {
-    int var119;
-    int var120;
-    int var121;
-    int var122;
-    var119 = AI_RND( 100 );
-    var120 = AI_RND( 100 );
-    var121 = AI_RND( 100 );
-    var122 = AI_RND( 100 );
+    int var125;
+    int var126;
+    int var127;
+    int var128;
+    var125 = AI_RND( 100 );
+    var126 = AI_RND( 100 );
+    var127 = AI_RND( 100 );
+    var128 = AI_RND( 100 );
     
     if ( AI_CHK_ONE_MORE() == 1 )
     {
         
-        if ( var122 < 70 )
+        if ( var128 < 70 )
         {
             AI_ACT_SKILL( BattleSkill.Megidola );
             AI_TAR_RND();
@@ -10536,19 +10558,19 @@ void AI_TINOHE_AEGIS()
     if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 1 )
     {
         
-        if ( var120 < 25 )
+        if ( var126 < 25 )
         {
             AI_ACT_SKILL( BattleSkill.Agidyne );
             AI_TAR_RND();
             return;
         }
-        else if ( var120 < ( 25 + 25 ) )
+        else if ( var126 < ( 25 + 25 ) )
         {
             AI_ACT_SKILL( BattleSkill.Bufudyne );
             AI_TAR_RND();
             return;
         }
-        else if ( var120 < ( ( 25 + 25 ) + 25 ) )
+        else if ( var126 < ( ( 25 + 25 ) + 25 ) )
         {
             AI_ACT_SKILL( BattleSkill.Ziodyne );
             AI_TAR_RND();
@@ -10567,7 +10589,7 @@ void AI_TINOHE_AEGIS()
     if ( FUNCTION_0053( 4 ) == 1 )
     {
         
-        if ( var121 < 60 )
+        if ( var127 < 60 )
         {
             AI_ACT_SKILL( BattleSkill.Bufudyne );
             AI_TAR_WEAK( Affinity.Ice );
@@ -10584,7 +10606,7 @@ void AI_TINOHE_AEGIS()
     else if ( FUNCTION_0053( 5 ) == 1 )
     {
         
-        if ( var121 < 60 )
+        if ( var127 < 60 )
         {
             AI_ACT_SKILL( BattleSkill.Ziodyne );
             AI_TAR_WEAK( Affinity.Elec );
@@ -10601,7 +10623,7 @@ void AI_TINOHE_AEGIS()
     else if ( FUNCTION_0053( 6 ) == 1 )
     {
         
-        if ( var121 < 60 )
+        if ( var127 < 60 )
         {
             AI_ACT_SKILL( BattleSkill.Garudyne );
             AI_TAR_WEAK( Affinity.Wind );
@@ -10618,7 +10640,7 @@ void AI_TINOHE_AEGIS()
     else if ( FUNCTION_0053( 3 ) == 1 )
     {
         
-        if ( var121 < 60 )
+        if ( var127 < 60 )
         {
             AI_ACT_SKILL( BattleSkill.Agidyne );
             AI_TAR_WEAK( Affinity.Fire );
@@ -10632,7 +10654,7 @@ void AI_TINOHE_AEGIS()
         }
 
     }
-    else if ( var119 < 20 )
+    else if ( var125 < 20 )
     {
         
         if ( FUNCTION_00B2( 186 ) == 0 )
@@ -10649,7 +10671,7 @@ void AI_TINOHE_AEGIS()
         }
 
     }
-    else if ( var119 < ( 20 + 20 ) )
+    else if ( var125 < ( 20 + 20 ) )
     {
         
         if ( FUNCTION_00B2( 186 ) == 0 )
@@ -10666,7 +10688,7 @@ void AI_TINOHE_AEGIS()
         }
 
     }
-    else if ( var119 < ( ( 20 + 20 ) + 20 ) )
+    else if ( var125 < ( ( 20 + 20 ) + 20 ) )
     {
         
         if ( FUNCTION_00B2( 186 ) == 0 )
@@ -10683,7 +10705,7 @@ void AI_TINOHE_AEGIS()
         }
 
     }
-    else if ( var119 < ( ( ( 20 + 20 ) + 20 ) + 20 ) )
+    else if ( var125 < ( ( ( 20 + 20 ) + 20 ) + 20 ) )
     {
         
         if ( FUNCTION_00B2( 186 ) == 0 )
@@ -10706,19 +10728,19 @@ void AI_TINOHE_AEGIS()
         AI_TAR_SELF();
         return;
     }
-    else if ( var120 < 25 )
+    else if ( var126 < 25 )
     {
         AI_ACT_SKILL( BattleSkill.Maragidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var120 < ( 25 + 25 ) )
+    else if ( var126 < ( 25 + 25 ) )
     {
         AI_ACT_SKILL( BattleSkill.Mabufudyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var120 < ( ( 25 + 25 ) + 25 ) )
+    else if ( var126 < ( ( 25 + 25 ) + 25 ) )
     {
         AI_ACT_SKILL( BattleSkill.Maziodyne );
         AI_TAR_RND();
@@ -10737,8 +10759,8 @@ void AI_TINOHE_AEGIS()
 // Procedure Index: 202
 void AI_SINKNO_AEGIS()
 {
-    int var123;
-    var123 = AI_RND( 100 );
+    int var129;
+    var129 = AI_RND( 100 );
     
     if ( ( AI_CHK_UNIT_HP_PERCENT( BattleUnit.SlaughterDrive, 30 ) == 1 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
     {
@@ -10769,14 +10791,14 @@ void AI_SINKNO_AEGIS()
     if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) ) == 1 )
     {
         
-        if ( var123 < 30 )
+        if ( var129 < 30 )
         {
             AI_ACT_SKILL( BattleSkill.Maragidyne );
             BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) );
             AI_TAR_RND();
             return;
         }
-        else if ( var123 < ( 30 + 30 ) )
+        else if ( var129 < ( 30 + 30 ) )
         {
             
             if ( FUNCTION_0053( 3 ) == 1 )
@@ -10795,7 +10817,7 @@ void AI_SINKNO_AEGIS()
             }
 
         }
-        else if ( var123 < ( ( 30 + 30 ) + 20 ) )
+        else if ( var129 < ( ( 30 + 30 ) + 20 ) )
         {
             AI_ACT_SKILL( BattleSkill.VileAssault );
             BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) );
@@ -10828,19 +10850,19 @@ void AI_SINKNO_AEGIS()
     }
 
     
-    if ( var123 < 30 )
+    if ( var129 < 30 )
     {
         AI_ACT_SKILL( BattleSkill.Maragidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var123 < ( 30 + 30 ) )
+    else if ( var129 < ( 30 + 30 ) )
     {
         AI_ACT_SKILL( BattleSkill.Agidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var123 < ( ( 30 + 30 ) + 20 ) )
+    else if ( var129 < ( ( 30 + 30 ) + 20 ) )
     {
         AI_ACT_SKILL( BattleSkill.VileAssault );
         AI_TAR_RND();
@@ -10865,8 +10887,8 @@ void AI_SINKNO_AEGIS()
 // Procedure Index: 203
 void AI_SULOUT_AEGIS()
 {
-    int var124;
-    var124 = AI_RND( 100 );
+    int var130;
+    var130 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     
     if ( AI_SELF_HP_PERCENT( 20 ) == 1 )
@@ -10886,7 +10908,7 @@ void AI_SULOUT_AEGIS()
     }
 
     
-    if ( var124 < 40 )
+    if ( var130 < 40 )
     {
         
         if ( ( FUNCTION_0058( 0x80 ) == 0 ) && ( FUNCTION_0058( 40 ) == 0 ) )
@@ -10903,7 +10925,7 @@ void AI_SULOUT_AEGIS()
         }
 
     }
-    else if ( var124 < ( 40 + 50 ) )
+    else if ( var130 < ( 40 + 50 ) )
     {
         AI_ACT_SKILL( BattleSkill.TorrentShot );
         AI_TAR_RND();
@@ -10922,12 +10944,12 @@ void AI_SULOUT_AEGIS()
 // Procedure Index: 204
 void AI_AKERON_AEGIS()
 {
-    int var125;
-    int var126;
-    int var127;
-    var125 = AI_RND( 100 );
-    var126 = AI_RND( 100 );
-    var127 = AI_RND( 100 );
+    int var131;
+    int var132;
+    int var133;
+    var131 = AI_RND( 100 );
+    var132 = AI_RND( 100 );
+    var133 = AI_RND( 100 );
     
     if ( FUNCTION_0053( 8 ) == 1 )
     {
@@ -10946,13 +10968,13 @@ void AI_AKERON_AEGIS()
     if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 1 )
     {
         
-        if ( var126 < 45 )
+        if ( var132 < 45 )
         {
             AI_ACT_SKILL( BattleSkill.Maragidyne );
             AI_TAR_RND();
             return;
         }
-        else if ( var126 < ( 45 + 10 ) )
+        else if ( var132 < ( 45 + 10 ) )
         {
             AI_ACT_SKILL( BattleSkill.Megidola );
             AI_TAR_RND();
@@ -10968,10 +10990,10 @@ void AI_AKERON_AEGIS()
     }
 
     
-    if ( var125 < 30 )
+    if ( var131 < 30 )
     {
         
-        if ( var127 < 50 )
+        if ( var133 < 50 )
         {
             AI_ACT_SKILL( BattleSkill.Agidyne );
             AI_TAR_RND();
@@ -10985,10 +11007,10 @@ void AI_AKERON_AEGIS()
         }
 
     }
-    else if ( var125 < ( 30 + 30 ) )
+    else if ( var131 < ( 30 + 30 ) )
     {
         
-        if ( var127 < 50 )
+        if ( var133 < 50 )
         {
             AI_ACT_SKILL( BattleSkill.Garudyne );
             AI_TAR_RND();
@@ -11002,7 +11024,7 @@ void AI_AKERON_AEGIS()
         }
 
     }
-    else if ( var125 < ( ( 30 + 30 ) + 10 ) )
+    else if ( var131 < ( ( 30 + 30 ) + 10 ) )
     {
         
         if ( ( AI_CHK_ENEMY_STATUS( StatusEffects.Panic ) == 0 ) && ( AI_CHK_ENEMIES_STATUS( StatusEffects.Fear ) == 0 ) )
@@ -11019,7 +11041,7 @@ void AI_AKERON_AEGIS()
         }
 
     }
-    else if ( var125 < ( ( ( 30 + 30 ) + 10 ) + 10 ) )
+    else if ( var131 < ( ( ( 30 + 30 ) + 10 ) + 10 ) )
     {
         
         if ( ( AI_CHK_ENEMY_STATUS( StatusEffects.Fear ) == 0 ) && ( AI_CHK_ENEMIES_STATUS( StatusEffects.Panic ) == 0 ) )
@@ -11049,21 +11071,21 @@ void AI_AKERON_AEGIS()
 // Procedure Index: 205
 void AI_KONKYU_AEGIS()
 {
-    int var128;
-    int var129;
-    var128 = AI_RND( 100 );
-    var129 = AI_RND( 100 );
+    int var134;
+    int var135;
+    var134 = AI_RND( 100 );
+    var135 = AI_RND( 100 );
     
     if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 1 )
     {
         
-        if ( var129 < 35 )
+        if ( var135 < 35 )
         {
             AI_ACT_SKILL( BattleSkill.VorpalBlade );
             AI_TAR_RND();
             return;
         }
-        else if ( var129 < ( 35 + 35 ) )
+        else if ( var135 < ( 35 + 35 ) )
         {
             AI_ACT_SKILL( BattleSkill.ViciousStrike );
             AI_TAR_RND();
@@ -11109,19 +11131,19 @@ void AI_KONKYU_AEGIS()
     if ( AI_ALLY_COUNT( 1 ) == 0 )
     {
         
-        if ( var128 < 20 )
+        if ( var134 < 20 )
         {
             AI_ACT_SKILL( BattleSkill.BraveBlade );
             AI_TAR_RND();
             return;
         }
-        else if ( var128 < ( 20 + 20 ) )
+        else if ( var134 < ( 20 + 20 ) )
         {
             AI_ACT_SKILL( BattleSkill.PrimalForce );
             AI_TAR_RND();
             return;
         }
-        else if ( var128 < ( ( 20 + 20 ) + 20 ) )
+        else if ( var134 < ( ( 20 + 20 ) + 20 ) )
         {
             AI_ACT_SKILL( BattleSkill.GodsHand );
             AI_TAR_RND();
@@ -11141,13 +11163,13 @@ void AI_KONKYU_AEGIS()
         }
 
     }
-    else if ( var129 < 35 )
+    else if ( var135 < 35 )
     {
         AI_ACT_SKILL( BattleSkill.VorpalBlade );
         AI_TAR_RND();
         return;
     }
-    else if ( var129 < ( 35 + 35 ) )
+    else if ( var135 < ( 35 + 35 ) )
     {
         AI_ACT_SKILL( BattleSkill.ViciousStrike );
         AI_TAR_RND();
@@ -11166,8 +11188,8 @@ void AI_KONKYU_AEGIS()
 // Procedure Index: 206
 void AI_KAIDEN_AEGIS()
 {
-    int var130;
-    var130 = AI_RND( 100 );
+    int var136;
+    var136 = AI_RND( 100 );
     
     if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 1 )
     {
@@ -11178,25 +11200,25 @@ void AI_KAIDEN_AEGIS()
     else if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 0 )
     {
         
-        if ( var130 < 70 )
+        if ( var136 < 70 )
         {
             AI_ACT_SKILL( BattleSkill.TempestSlash );
             AI_TAR_RND();
             return;
         }
-        else if ( var130 < ( 70 + 10 ) )
+        else if ( var136 < ( 70 + 10 ) )
         {
             AI_ACT_SKILL( BattleSkill.PowerCharge );
             AI_TAR_RND();
             return;
         }
-        else if ( var130 < ( ( 70 + 10 ) + 10 ) )
+        else if ( var136 < ( ( 70 + 10 ) + 10 ) )
         {
             AI_ACT_SKILL( BattleSkill.VorpalBlade );
             AI_TAR_RND();
             return;
         }
-        else if ( var130 < ( ( ( 70 + 10 ) + 10 ) + 10 ) )
+        else if ( var136 < ( ( ( 70 + 10 ) + 10 ) + 10 ) )
         {
             AI_ACT_SKILL( BattleSkill.Samsara );
             AI_TAR_RND();
@@ -11216,8 +11238,8 @@ void AI_KAIDEN_AEGIS()
 // Procedure Index: 207
 void AI_ONNENM_AEGIS()
 {
-    int var131;
-    var131 = AI_RND( 100 );
+    int var137;
+    var137 = AI_RND( 100 );
     
     if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 1 )
     {
@@ -11228,25 +11250,25 @@ void AI_ONNENM_AEGIS()
     else if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 0 )
     {
         
-        if ( var131 < 30 )
+        if ( var137 < 30 )
         {
             AI_ACT_SKILL( BattleSkill.LifeDrainBoss );
             AI_TAR_RND();
             return;
         }
-        else if ( var131 < ( 30 + 10 ) )
+        else if ( var137 < ( 30 + 10 ) )
         {
             AI_ACT_SKILL( BattleSkill.PowerCharge );
             AI_TAR_RND();
             return;
         }
-        else if ( var131 < ( ( 30 + 10 ) + 10 ) )
+        else if ( var137 < ( ( 30 + 10 ) + 10 ) )
         {
             AI_ACT_SKILL( BattleSkill.DieforMe );
             AI_TAR_RND();
             return;
         }
-        else if ( var131 < ( ( ( 30 + 10 ) + 10 ) + 50 ) )
+        else if ( var137 < ( ( ( 30 + 10 ) + 10 ) + 50 ) )
         {
             AI_ACT_SKILL( BattleSkill.PoisonArrow );
             AI_TAR_RND();
@@ -11648,7 +11670,7 @@ void kakunin()
 // Procedure Index: 221
 void AI_metis()
 {
-    int var132;
+    int var138;
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     
@@ -11661,7 +11683,7 @@ void AI_metis()
         BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) );
     }
 
-    var132 = AI_RND( 100 );
+    var138 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     
     if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) ) == 1 )
@@ -11669,13 +11691,13 @@ void AI_metis()
         AI_WAIT_CUSTOM( 222 );
         return;
     }
-    else if ( var132 < 50 )
+    else if ( var138 < 50 )
     {
         AI_ACT_WEAPON();
         AI_TAR_RND();
         return;
     }
-    else if ( var132 < ( ( 50 + 50 ) + 25 ) )
+    else if ( var138 < ( ( 50 + 50 ) + 25 ) )
     {
         AI_ACT_SKILL( BattleSkill.FatalEnd );
         AI_TAR_RND();
@@ -11694,18 +11716,18 @@ void AI_metis()
 // Procedure Index: 222
 void AI_Erebos()
 {
-    int var133;
-    var133 = 0;
+    int var139;
+    var139 = 0;
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (511) = 5631
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (511) = 5631
     
     if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 511 ) ) == 1 )
     {
-        var133 = FUNCTION_0192( 2 );
-        var133 = ( var133 + 1 );
-        FUNCTION_0193( 2, var133 );
+        var139 = FUNCTION_0192( 2 );
+        var139 = ( var139 + 1 );
+        FUNCTION_0193( 2, var139 );
         
-        if ( var133 < 3 )
+        if ( var139 < 3 )
         {
             AI_AFFINITY_SWITCH( BattleUnit.ErebusResistPhys );
             BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 511 ) );
@@ -11754,15 +11776,15 @@ void AI_Erebos()
 // Procedure Index: 223
 void AI_Erebos_A()
 {
-    int var134;
-    int var135;
+    int var140;
+    int var141;
     FUNCTION_0193( 1, 0 );
-    var134 = AI_RND( 100 );
-    var135 = FUNCTION_0192( 0 );
-    var135 = ( var135 + 1 );
-    FUNCTION_0193( 0, var135 );
+    var140 = AI_RND( 100 );
+    var141 = FUNCTION_0192( 0 );
+    var141 = ( var141 + 1 );
+    FUNCTION_0193( 0, var141 );
     
-    if ( var135 > 4 )
+    if ( var141 > 4 )
     {
         FUNCTION_0193( 0, 0 );
         FUNCTION_0175( 1200 );
@@ -11772,7 +11794,7 @@ void AI_Erebos_A()
     }
 
     
-    if ( var134 < 20 )
+    if ( var140 < 20 )
     {
         AI_ACT_SKILL( BattleSkill.AlmightyAttack );
         AI_TAR_RND();
@@ -11789,17 +11811,17 @@ void AI_Erebos_A()
 // Procedure Index: 224
 void AI_Erebos_B()
 {
-    int var136;
-    int var137;
+    int var142;
+    int var143;
     FUNCTION_0193( 0, 0 );
-    var136 = AI_RND( 100 );
-    var137 = FUNCTION_0192( 1 );
-    var137 = ( var137 + 1 );
-    FUNCTION_0193( 1, var137 );
+    var142 = AI_RND( 100 );
+    var143 = FUNCTION_0192( 1 );
+    var143 = ( var143 + 1 );
+    FUNCTION_0193( 1, var143 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (502) = 5622
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (502) = 5622
     
-    if ( var137 == 3 )
+    if ( var143 == 3 )
     {
         BIT_ON( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 502 ) );
     }
@@ -11819,7 +11841,7 @@ void AI_Erebos_B()
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (506) = 5626
     
-    if ( var137 > 3 )
+    if ( var143 > 3 )
     {
         
         if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) ) == 0 )
@@ -11863,25 +11885,25 @@ void AI_Erebos_B()
     }
 
     
-    if ( var136 < 10 )
+    if ( var142 < 10 )
     {
         AI_ACT_SKILL( BattleSkill.AlmightyAttack );
         AI_TAR_RND();
         return;
     }
-    else if ( var136 < 15 )
+    else if ( var142 < 15 )
     {
         AI_ACT_SKILL( BattleSkill.Mahamaon );
         AI_TAR_RND();
         return;
     }
-    else if ( var136 < 20 )
+    else if ( var142 < 20 )
     {
         AI_ACT_SKILL( BattleSkill.Mamudoon );
         AI_TAR_RND();
         return;
     }
-    else if ( var136 < 30 )
+    else if ( var142 < 30 )
     {
         
         if ( AI_CHK_ENEMIES_STATUS( StatusEffects.Fear ) == 1 )
@@ -11898,7 +11920,7 @@ void AI_Erebos_B()
         }
 
     }
-    else if ( var136 < 40 )
+    else if ( var142 < 40 )
     {
         
         if ( AI_CHK_ENEMIES_STATUS( StatusEffects.Despair ) == 1 )
@@ -11915,7 +11937,7 @@ void AI_Erebos_B()
         }
 
     }
-    else if ( var136 < 50 )
+    else if ( var142 < 50 )
     {
         
         if ( AI_CHK_ENEMIES_STATUS( StatusEffects.Panic ) == 1 )
@@ -11932,7 +11954,7 @@ void AI_Erebos_B()
         }
 
     }
-    else if ( var136 < 60 )
+    else if ( var142 < 60 )
     {
         
         if ( AI_CHK_ENEMIES_STATUS( StatusEffects.Poison ) == 1 )
@@ -11949,7 +11971,7 @@ void AI_Erebos_B()
         }
 
     }
-    else if ( var136 < 70 )
+    else if ( var142 < 70 )
     {
         
         if ( AI_CHK_ENEMIES_EFFECT( 8 ) == 1 )
@@ -11966,7 +11988,7 @@ void AI_Erebos_B()
         }
 
     }
-    else if ( var136 < 80 )
+    else if ( var142 < 80 )
     {
         
         if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff ) == 1 )
@@ -11983,7 +12005,7 @@ void AI_Erebos_B()
         }
 
     }
-    else if ( var136 < 90 )
+    else if ( var142 < 90 )
     {
         
         if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.EvasionUpDebuff ) == 1 )
@@ -12440,20 +12462,20 @@ void AI_TUJYOU()
 // Procedure Index: 226
 void AI_Shadow_hero()
 {
-    int var138;
-    int var139;
-    var138 = FUNCTION_0192( 0 );
-    var138 = ( var138 + 1 );
-    FUNCTION_0193( 0, var138 );
+    int var144;
+    int var145;
+    var144 = FUNCTION_0192( 0 );
+    var144 = ( var144 + 1 );
+    FUNCTION_0193( 0, var144 );
     
-    if ( var138 > 3 )
+    if ( var144 > 3 )
     {
         FUNCTION_0193( 0, 0 );
         FUNCTION_01DF();
         return;
     }
 
-    var139 = AI_RND( 100 );
+    var145 = AI_RND( 100 );
     
     if ( FUNCTION_01EC() == 225 )
     {
@@ -12490,8 +12512,8 @@ void AI_Shadow_hero()
 // Procedure Index: 227
 void AI_Shadow_hero_AIGISU()
 {
-    int var140;
-    var140 = AI_RND( 100 );
+    int var146;
+    var146 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (455) = 5575
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (455) = 5575
     
@@ -12508,13 +12530,13 @@ void AI_Shadow_hero_AIGISU()
     if ( AI_ENEMY_COUNT( 1 ) == 0 )
     {
         
-        if ( var140 < 30 )
+        if ( var146 < 30 )
         {
             
-            if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
+            if ( AI_CHK_SELF_EFFECT( 81 ) == 0 )
             {
                 AI_ACT_PERSONA( 225, 239 );
-                AI_TAR_RND();
+                AI_TAR_SELF();
                 return;
             }
             else 
@@ -12525,13 +12547,13 @@ void AI_Shadow_hero_AIGISU()
             }
 
         }
-        else if ( var140 < 60 )
+        else if ( var146 < 60 )
         {
             AI_ACT_PERSONA( 225, BattleSkill.GodsHand );
             AI_TAR_RND();
             return;
         }
-        else if ( var140 < 90 )
+        else if ( var146 < 90 )
         {
             AI_ACT_PERSONA( 225, BattleSkill.AkashaArts );
             AI_TAR_RND();
@@ -12548,19 +12570,19 @@ void AI_Shadow_hero_AIGISU()
     else if ( ( ( FUNCTION_015D( 1, 1 ) == 1 ) || ( FUNCTION_015E( 1, 1 ) == 1 ) ) || ( FUNCTION_015F( 1, 1 ) == 1 ) )
     {
         
-        if ( var140 < 25 )
+        if ( var146 < 25 )
         {
             AI_ACT_PERSONA( 225, BattleSkill.BraveBlade );
             AI_TAR_RND();
             return;
         }
-        else if ( var140 < 50 )
+        else if ( var146 < 50 )
         {
             AI_ACT_PERSONA( 225, BattleSkill.Garudyne );
             AI_TAR_RND();
             return;
         }
-        else if ( var140 < 75 )
+        else if ( var146 < 75 )
         {
             AI_ACT_PERSONA( 225, BattleSkill.VileAssault );
             AI_TAR_RND();
@@ -12580,13 +12602,13 @@ void AI_Shadow_hero_AIGISU()
         }
 
     }
-    else if ( var140 < 30 )
+    else if ( var146 < 30 )
     {
         
-        if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
+        if ( AI_CHK_SELF_EFFECT( 81 ) == 0 )
         {
             AI_ACT_PERSONA( 225, 239 );
-            AI_TAR_RND();
+            AI_TAR_SELF();
             return;
         }
         else 
@@ -12597,13 +12619,13 @@ void AI_Shadow_hero_AIGISU()
         }
 
     }
-    else if ( var140 < 60 )
+    else if ( var146 < 60 )
     {
         AI_ACT_PERSONA( 225, BattleSkill.GodsHand );
         AI_TAR_RND();
         return;
     }
-    else if ( var140 < 90 )
+    else if ( var146 < 90 )
     {
         AI_ACT_PERSONA( 225, BattleSkill.AkashaArts );
         AI_TAR_RND();
@@ -12622,8 +12644,8 @@ void AI_Shadow_hero_AIGISU()
 // Procedure Index: 228
 void AI_Shadow_hero_YUKARI()
 {
-    int var141;
-    var141 = AI_RND( 100 );
+    int var147;
+    var147 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (456) = 5576
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (456) = 5576
     
@@ -12637,25 +12659,25 @@ void AI_Shadow_hero_YUKARI()
     }
 
     
-    if ( var141 < 25 )
+    if ( var147 < 25 )
     {
         AI_ACT_PERSONA( 224, BattleSkill.PantaRhei );
         AI_TAR_RND();
         return;
     }
-    else if ( var141 < 45 )
+    else if ( var147 < 45 )
     {
         AI_ACT_PERSONA( 224, BattleSkill.Magarudyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var141 < 65 )
+    else if ( ( var147 < 65 ) && ( AI_CHK_ENEMIES_STATUS( StatusEffects.Charm ) == 0 ) )
     {
-        AI_ACT_PERSONA( 224, BattleSkill.PantaRhei );
+        AI_ACT_PERSONA( 224, 243 );
         AI_TAR_RND();
         return;
     }
-    else if ( var141 < 85 )
+    else if ( var147 < 85 )
     {
         
         if ( AI_SELF_HP_PERCENT( 90 ) == 1 )
@@ -12685,8 +12707,8 @@ void AI_Shadow_hero_YUKARI()
 // Procedure Index: 229
 void AI_Shadow_hero_MITURU()
 {
-    int var142;
-    var142 = AI_RND( 100 );
+    int var148;
+    var148 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (457) = 5577
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (457) = 5577
     
@@ -12700,19 +12722,19 @@ void AI_Shadow_hero_MITURU()
     }
 
     
-    if ( var142 < 25 )
+    if ( var148 < 30 )
     {
         AI_ACT_PERSONA( 226, BattleSkill.Niflheim );
         AI_TAR_RND();
         return;
     }
-    else if ( var142 < 45 )
+    else if ( var148 < 50 )
     {
         AI_ACT_PERSONA( 226, BattleSkill.Mabufudyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var142 < 65 )
+    else if ( var148 < 70 )
     {
         
         if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 )
@@ -12729,16 +12751,16 @@ void AI_Shadow_hero_MITURU()
         }
 
     }
-    else if ( var142 < 85 )
+    else if ( AI_CHK_ENEMIES_STATUS( StatusEffects.Panic ) == 0 )
     {
-        AI_ACT_PERSONA( 226, BattleSkill.Niflheim );
+        AI_ACT_PERSONA( 226, 249 );
         AI_TAR_RND();
         return;
     }
     else 
     {
-        AI_ACT_PERSONA( 226, BattleSkill.MarinKarin );
-        FUNCTION_006E( 1 );
+        AI_ACT_WEAPON();
+        AI_TAR_STATUS( StatusEffects.Panic );
         return;
     }
 
@@ -12748,8 +12770,8 @@ void AI_Shadow_hero_MITURU()
 // Procedure Index: 230
 void AI_Shadow_hero_JUNPEI()
 {
-    int var143;
-    var143 = AI_RND( 100 );
+    int var149;
+    var149 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (458) = 5578
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (458) = 5578
     
@@ -12763,27 +12785,27 @@ void AI_Shadow_hero_JUNPEI()
     }
 
     
-    if ( var143 < 25 )
+    if ( var149 < 25 )
     {
         AI_ACT_PERSONA( 227, BattleSkill.VorpalBlade );
         AI_TAR_RND();
         return;
     }
-    else if ( var143 < 45 )
+    else if ( var149 < 45 )
     {
         AI_ACT_PERSONA( 227, BattleSkill.Agidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var143 < 65 )
+    else if ( var149 < 65 )
     {
         AI_ACT_PERSONA( 227, BattleSkill.BraveBlade );
         AI_TAR_RND();
         return;
     }
-    else if ( var143 < 85 )
+    else if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 )
     {
-        AI_ACT_PERSONA( 227, BattleSkill.Deathbound );
+        AI_ACT_PERSONA( 227, BattleSkill.Matarunda );
         AI_TAR_RND();
         return;
     }
@@ -12800,8 +12822,8 @@ void AI_Shadow_hero_JUNPEI()
 // Procedure Index: 231
 void AI_Shadow_hero_SANADA()
 {
-    int var144;
-    var144 = AI_RND( 100 );
+    int var150;
+    var150 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (459) = 5579
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (459) = 5579
     
@@ -12815,24 +12837,18 @@ void AI_Shadow_hero_SANADA()
     }
 
     
-    if ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff ) == 0 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff ) == 0 ) )
+    if ( AI_CHK_ENEMIES_EFFECT( 160 ) == 1 )
     {
         
-        if ( var144 < 30 )
+        if ( var150 < 40 )
         {
             AI_ACT_PERSONA( 228, BattleSkill.ThunderReign );
             AI_TAR_RND();
             return;
         }
-        else if ( var144 < 60 )
+        else if ( var150 < 80 )
         {
             AI_ACT_PERSONA( 228, BattleSkill.Maziodyne );
-            AI_TAR_RND();
-            return;
-        }
-        else if ( var144 < 90 )
-        {
-            AI_ACT_PERSONA( 228, BattleSkill.ThunderReign );
             AI_TAR_RND();
             return;
         }
@@ -12844,22 +12860,11 @@ void AI_Shadow_hero_SANADA()
         }
 
     }
-    else if ( var144 < 90 )
+    else if ( var150 < 90 )
     {
-        
-        if ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 )
-        {
-            AI_ACT_WEAPON();
-            AI_TAR_RND();
-            return;
-        }
-        else 
-        {
-            AI_ACT_PERSONA( 228, 250 );
-            AI_TAR_RND();
-            return;
-        }
-
+        AI_ACT_PERSONA( 228, 248 );
+        AI_TAR_RND();
+        return;
     }
     else 
     {
@@ -12874,8 +12879,8 @@ void AI_Shadow_hero_SANADA()
 // Procedure Index: 232
 void AI_Shadow_hero_AMADA()
 {
-    int var145;
-    var145 = AI_RND( 100 );
+    int var151;
+    var151 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (460) = 5580
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (460) = 5580
     
@@ -12891,22 +12896,28 @@ void AI_Shadow_hero_AMADA()
     
     if ( AI_CHK_ENEMY_STATUS( StatusEffects.Downed ) == 1 )
     {
-        AI_ACT_PERSONA( 229, BattleSkill.VileAssault );
+        AI_ACT_PERSONA( 229, BattleSkill.PrimalForce );
         AI_TAR_STATUS( StatusEffects.Downed );
         return;
     }
 
     
-    if ( var145 < 55 )
+    if ( var151 < 40 )
     {
         AI_ACT_PERSONA( 229, BattleSkill.Maziodyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var145 < 90 )
+    else if ( var151 < 80 )
     {
         AI_ACT_PERSONA( 229, BattleSkill.Hamaon );
         AI_TAR_RND();
+        return;
+    }
+    else if ( AI_CHK_SELF_EFFECT( SpecialEffects.Revolution ) == 0 )
+    {
+        AI_ACT_PERSONA( 229, 253 );
+        AI_TAR_SELF();
         return;
     }
     else 
@@ -12922,8 +12933,8 @@ void AI_Shadow_hero_AMADA()
 // Procedure Index: 233
 void AI_Shadow_hero_KOROMARU()
 {
-    int var146;
-    var146 = AI_RND( 100 );
+    int var152;
+    var152 = AI_RND( 100 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (461) = 5581
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (461) = 5581
     
@@ -12937,30 +12948,31 @@ void AI_Shadow_hero_KOROMARU()
     }
 
     
-    if ( var146 < 25 )
+    if ( var152 < 25 )
     {
         AI_ACT_PERSONA( 230, BattleSkill.Maragidyne );
         AI_TAR_RND();
     }
-    else if ( var146 < 45 )
+    else if ( var152 < 55 )
     {
         AI_ACT_PERSONA( 230, BattleSkill.Ragnarok );
         AI_TAR_RND();
     }
-    else if ( var146 < 65 )
-    {
-        AI_ACT_PERSONA( 230, BattleSkill.Ragnarok );
-        AI_TAR_RND();
-    }
-    else if ( var146 < 85 )
+    else if ( var152 < 75 )
     {
         AI_ACT_PERSONA( 230, BattleSkill.Mamudoon );
         AI_TAR_RND();
     }
+    else if ( AI_CHK_ENEMIES_STATUS( StatusEffects.Despair ) == 0 )
+    {
+        AI_ACT_PERSONA( 230, 254 );
+        AI_TAR_RND();
+        return;
+    }
     else 
     {
         AI_ACT_WEAPON();
-        AI_TAR_RND();
+        AI_TAR_STATUS( StatusEffects.Despair );
         return;
     }
 
@@ -12978,14 +12990,14 @@ void AI_Shadow_hero_METIS()
 // Procedure Index: 235
 void AI_AMADAK_AEGIS()
 {
-    int var147;
-    int var148;
-    int var149;
-    int var150;
-    var147 = AI_RND( 100 );
-    var148 = AI_RND( 100 );
-    var149 = AI_RND( 100 );
-    var150 = AI_RND( 100 );
+    int var153;
+    int var154;
+    int var155;
+    int var156;
+    var153 = AI_RND( 100 );
+    var154 = AI_RND( 100 );
+    var155 = AI_RND( 100 );
+    var156 = AI_RND( 100 );
     
     if ( AI_EN_HAS_REFLECT( Affinity.Elec ) == 1 )
     {
@@ -13061,22 +13073,22 @@ void AI_AMADAK_AEGIS()
         else if ( AI_CHK_ENEMY_STATUS( StatusEffects.Downed ) == 0 )
         {
             
-            if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Rebellion ) == 0 )
+            if ( AI_CHK_SELF_EFFECT( SpecialEffects.Rebellion ) == 0 )
             {
                 
-                if ( var147 < 10 )
+                if ( var153 < 10 )
                 {
                     AI_ACT_WEAPON();
                     AI_TAR_RND();
                     return;
                 }
-                else if ( var147 < ( 10 + 20 ) )
+                else if ( var153 < ( 10 + 20 ) )
                 {
                     AI_ACT_SKILL( BattleSkill.Ziodyne );
                     AI_TAR_RND();
                     return;
                 }
-                else if ( var147 < ( ( 10 + 20 ) + 20 ) )
+                else if ( var153 < ( ( 10 + 20 ) + 20 ) )
                 {
                     AI_ACT_SKILL( BattleSkill.Hamaon );
                     AI_TAR_RND();
@@ -13084,22 +13096,22 @@ void AI_AMADAK_AEGIS()
                 }
                 else 
                 {
-                    AI_ACT_SKILL( BattleSkill.Rebellion );
+                    AI_ACT_SKILL( 252 );
                     AI_TAR_RND();
                     return;
                 }
 
             }
-            else if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Rebellion ) == 1 )
+            else if ( AI_CHK_SELF_EFFECT( SpecialEffects.Rebellion ) == 1 )
             {
                 
-                if ( var148 < 10 )
+                if ( var154 < 10 )
                 {
                     AI_ACT_WEAPON();
                     AI_TAR_RND();
                     return;
                 }
-                else if ( var148 < ( 10 + 60 ) )
+                else if ( var154 < ( 10 + 60 ) )
                 {
                     AI_ACT_SKILL( BattleSkill.Ziodyne );
                     AI_TAR_RND();
@@ -13129,25 +13141,25 @@ void AI_AMADAK_AEGIS()
         else if ( AI_CHK_ENEMY_STATUS( StatusEffects.Downed ) == 0 )
         {
             
-            if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Revolution ) == 0 )
+            if ( AI_CHK_SELF_EFFECT( SpecialEffects.Revolution ) == 0 )
             {
-                AI_ACT_SKILL( BattleSkill.Revolution );
+                AI_ACT_SKILL( 253 );
                 AI_TAR_RND();
                 return;
             }
-            else if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Revolution ) == 1 )
+            else if ( AI_CHK_SELF_EFFECT( SpecialEffects.Revolution ) == 1 )
             {
                 
                 if ( AI_CHK_ALLY_EFFECT( SpecialEffects.Makarakarn ) == 0 )
                 {
                     
-                    if ( var149 < 10 )
+                    if ( var155 < 10 )
                     {
                         AI_ACT_WEAPON();
                         AI_TAR_RND();
                         return;
                     }
-                    else if ( var149 < ( 10 + 70 ) )
+                    else if ( var155 < ( 10 + 70 ) )
                     {
                         AI_ACT_SKILL( BattleSkill.VileAssault );
                         AI_TAR_RND();
@@ -13164,7 +13176,7 @@ void AI_AMADAK_AEGIS()
                 else if ( AI_CHK_ALLY_EFFECT( SpecialEffects.Makarakarn ) == 1 )
                 {
                     
-                    if ( var150 < 10 )
+                    if ( var156 < 10 )
                     {
                         AI_ACT_WEAPON();
                         AI_TAR_RND();
@@ -13197,28 +13209,16 @@ void AI_AMADAK_AEGIS()
 // Procedure Index: 236
 void AI_SANADA_AEGIS()
 {
-    int var151;
-    int var152;
-    int var153;
-    int var154;
-    var151 = AI_RND( 100 );
-    var152 = AI_RND( 100 );
-    var153 = AI_RND( 100 );
-    var154 = AI_RND( 100 );
+    int var157;
+    int var158;
+    int var159;
+    int var160;
+    var157 = AI_RND( 100 );
+    var158 = AI_RND( 100 );
+    var159 = AI_RND( 100 );
+    var160 = AI_RND( 100 );
     
-    if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 1 )
-    {
-        AI_ACT_SKILL( BattleSkill.GiganticFist );
-        STAND();
-        return;
-    }
-    else if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 1 )
-    {
-        AI_ACT_SKILL( BattleSkill.Ziodyne );
-        STAND();
-        return;
-    }
-    else if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Tetrakarn ) == 1 )
+    if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Tetrakarn ) == 1 )
     {
         
         if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Makarakarn ) == 1 )
@@ -13227,7 +13227,7 @@ void AI_SANADA_AEGIS()
             AI_TAR_RND();
             return;
         }
-        else if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Makarakarn ) == 0 )
+        else if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 )
         {
             AI_ACT_SKILL( BattleSkill.MindCharge );
             AI_TAR_RND();
@@ -13241,19 +13241,35 @@ void AI_SANADA_AEGIS()
         AI_TAR_RND();
         return;
     }
-    else if ( AI_SELF_HP_PERCENT( 50 ) == 0 )
+
+    
+    if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 1 )
+    {
+        AI_ACT_SKILL( BattleSkill.Ziodyne );
+        STAND();
+        return;
+    }
+    else if ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 1 )
+    {
+        AI_ACT_SKILL( BattleSkill.GiganticFist );
+        STAND();
+        return;
+    }
+
+    
+    if ( AI_SELF_HP_PERCENT( 50 ) == 0 )
     {
         
-        if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff ) == 0 )
+        if ( AI_CHK_ENEMIES_EFFECT( 34 ) == 0 )
         {
             
-            if ( var151 < 10 )
+            if ( var157 < 10 )
             {
                 AI_ACT_WEAPON();
                 STAND();
                 return;
             }
-            else if ( var151 < ( 10 + 40 ) )
+            else if ( var157 < ( 10 + 40 ) )
             {
                 AI_ACT_SKILL( BattleSkill.GiganticFist );
                 STAND();
@@ -13261,16 +13277,16 @@ void AI_SANADA_AEGIS()
             }
             else 
             {
-                AI_ACT_SKILL( BattleSkill.Masukunda );
+                AI_ACT_SKILL( 248 );
                 AI_TAR_RND();
                 return;
             }
 
         }
-        else if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff ) == 1 )
+        else if ( AI_CHK_ENEMIES_EFFECT( 34 ) == 1 )
         {
             
-            if ( var152 < 20 )
+            if ( var158 < 20 )
             {
                 AI_ACT_WEAPON();
                 STAND();
@@ -13292,13 +13308,13 @@ void AI_SANADA_AEGIS()
         if ( FUNCTION_0158( 236, 30 ) == 0 )
         {
             
-            if ( var153 < 20 )
+            if ( var159 < 20 )
             {
                 AI_ACT_WEAPON();
                 STAND();
                 return;
             }
-            else if ( var153 < ( 20 + 40 ) )
+            else if ( var159 < ( 20 + 40 ) )
             {
                 AI_ACT_SKILL( BattleSkill.PowerCharge );
                 AI_TAR_RND();
@@ -13315,19 +13331,19 @@ void AI_SANADA_AEGIS()
         else if ( FUNCTION_0158( 236, 30 ) == 1 )
         {
             
-            if ( var154 < 10 )
+            if ( var160 < 10 )
             {
                 AI_ACT_WEAPON();
                 STAND();
                 return;
             }
-            else if ( var154 < ( 10 + 20 ) )
+            else if ( var160 < ( 10 + 20 ) )
             {
                 AI_ACT_SKILL( BattleSkill.PowerCharge );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var154 < ( ( 10 + 20 ) + 20 ) )
+            else if ( var160 < ( ( 10 + 20 ) + 20 ) )
             {
                 AI_ACT_SKILL( BattleSkill.MindCharge );
                 AI_TAR_RND();
@@ -13356,13 +13372,19 @@ void AI_SANADA_AEGIS()
 // Procedure Index: 237
 void AI_Junpei()
 {
-    int var155;
-    var155 = AI_RND( 100 );
+    int var161;
+    var161 = AI_RND( 100 );
     
     if ( AI_CHK_ALLIES_STATUS( StatusEffects.Panic ) == 1 )
     {
         AI_ACT_SKILL( BattleSkill.Patra );
         AI_TAR_STATUS( StatusEffects.Panic );
+        return;
+    }
+    else if ( AI_CHK_ALLIES_STATUS( StatusEffects.Despair ) == 1 )
+    {
+        AI_ACT_SKILL( BattleSkill.Patra );
+        AI_TAR_STATUS( StatusEffects.Despair );
         return;
     }
 
@@ -13375,31 +13397,31 @@ void AI_Junpei()
     }
 
     
-    if ( var155 < 13 )
+    if ( var161 < 13 )
     {
         AI_ACT_SKILL( BattleSkill.Agidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var155 < ( 13 + 13 ) )
+    else if ( var161 < ( 13 + 13 ) )
     {
         AI_ACT_SKILL( BattleSkill.Maragidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var155 < ( ( 13 + 13 ) + 13 ) )
+    else if ( var161 < ( ( 13 + 13 ) + 13 ) )
     {
         AI_ACT_SKILL( BattleSkill.VorpalBlade );
         AI_TAR_RND();
         return;
     }
-    else if ( var155 < ( ( ( 13 + 13 ) + 13 ) + 13 ) )
+    else if ( var161 < ( ( ( 13 + 13 ) + 13 ) + 13 ) )
     {
         
-        if ( AI_CHK_SELF_EFFECT( SpecialEffects.DefenseBuff ) == 0 )
+        if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackDebuff ) == 0 )
         {
-            AI_ACT_SKILL( BattleSkill.Rakukaja );
-            AI_TAR_SELF();
+            AI_ACT_SKILL( BattleSkill.Matarunda );
+            AI_TAR_RND();
             return;
         }
         else 
@@ -13410,7 +13432,7 @@ void AI_Junpei()
         }
 
     }
-    else if ( var155 < ( ( ( ( 13 + 13 ) + 13 ) + 13 ) + 12 ) )
+    else if ( var161 < ( ( ( ( 13 + 13 ) + 13 ) + 13 ) + 12 ) )
     {
         
         if ( AI_CHK_ENEMY_STATUS( StatusEffects.Panic ) == 0 )
@@ -13427,7 +13449,7 @@ void AI_Junpei()
         }
 
     }
-    else if ( var155 < ( ( ( ( ( 13 + 13 ) + 13 ) + 13 ) + 12 ) + 13 ) )
+    else if ( var161 < ( ( ( ( ( 13 + 13 ) + 13 ) + 13 ) + 12 ) + 13 ) )
     {
         
         if ( AI_EN_HAS_REFLECT( Affinity.Fire ) == 1 )
@@ -13456,7 +13478,7 @@ void AI_Junpei()
         }
 
     }
-    else if ( var155 < ( ( ( ( ( ( 13 + 13 ) + 13 ) + 13 ) + 12 ) + 13 ) + 13 ) )
+    else if ( var161 < ( ( ( ( ( ( 13 + 13 ) + 13 ) + 13 ) + 12 ) + 13 ) + 13 ) )
     {
         AI_ACT_SKILL( BattleSkill.TempestSlash );
         AI_TAR_RND();
@@ -13475,10 +13497,10 @@ void AI_Junpei()
 // Procedure Index: 238
 void AI_Koromaru()
 {
-    int var156;
-    int var157;
-    var156 = AI_RND( 100 );
-    var157 = AI_RND( 100 );
+    int var162;
+    int var163;
+    var162 = AI_RND( 100 );
+    var163 = AI_RND( 100 );
     
     if ( AI_CHK_ALLIES_STATUS( StatusEffects.Charm ) == 1 )
     {
@@ -13491,7 +13513,7 @@ void AI_Koromaru()
     if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 1 )
     {
         
-        if ( var157 < 50 )
+        if ( var163 < 50 )
         {
             AI_ACT_SKILL( BattleSkill.Agidyne );
             AI_TAR_RND();
@@ -13507,31 +13529,31 @@ void AI_Koromaru()
     }
 
     
-    if ( var156 < 12 )
+    if ( var162 < 12 )
     {
         AI_ACT_SKILL( BattleSkill.Agidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var156 < ( 12 + 11 ) )
+    else if ( var162 < ( 12 + 11 ) )
     {
         AI_ACT_SKILL( BattleSkill.Maragidyne );
         AI_TAR_RND();
         return;
     }
-    else if ( var156 < ( ( 12 + 11 ) + 11 ) )
+    else if ( var162 < ( ( 12 + 11 ) + 11 ) )
     {
         AI_ACT_SKILL( BattleSkill.Mudoon );
         AI_TAR_RND();
         return;
     }
-    else if ( var156 < ( ( ( 12 + 11 ) + 11 ) + 11 ) )
+    else if ( var162 < ( ( ( 12 + 11 ) + 11 ) + 11 ) )
     {
         AI_ACT_SKILL( BattleSkill.Mamudoon );
         AI_TAR_RND();
         return;
     }
-    else if ( var156 < ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) )
+    else if ( var162 < ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) )
     {
         
         if ( AI_CHK_ENEMY_STATUS( StatusEffects.Fear ) == 0 )
@@ -13548,13 +13570,13 @@ void AI_Koromaru()
         }
 
     }
-    else if ( var156 < ( ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) )
+    else if ( var162 < ( ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) )
     {
         AI_ACT_SKILL( BattleSkill.BraveBlade );
         AI_TAR_RND();
         return;
     }
-    else if ( var156 < ( ( ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) )
+    else if ( var162 < ( ( ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) )
     {
         
         if ( FUNCTION_0057( 93 ) == 0 )
@@ -13571,7 +13593,7 @@ void AI_Koromaru()
         }
 
     }
-    else if ( var156 < ( ( ( ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) )
+    else if ( var162 < ( ( ( ( ( ( ( 12 + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) + 11 ) )
     {
         
         if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AilmentSusceptibility ) == 0 )
@@ -13601,10 +13623,10 @@ void AI_Koromaru()
 // Procedure Index: 239
 void AI_YUKARI_AEGIS()
 {
-    int var158;
-    int var159;
-    var158 = AI_RND( 100 );
-    var159 = AI_RND( 100 );
+    int var164;
+    int var165;
+    var164 = AI_RND( 100 );
+    var165 = AI_RND( 100 );
     
     if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Makarakarn ) == 1 )
     {
@@ -13615,13 +13637,13 @@ void AI_YUKARI_AEGIS()
     else if ( AI_SELF_HP_PERCENT( 50 ) == 0 )
     {
         
-        if ( var158 < 33 )
+        if ( var164 < 33 )
         {
             AI_ACT_WEAPON();
             AI_TAR_RND();
             return;
         }
-        else if ( var158 < ( 33 + 33 ) )
+        else if ( var164 < ( 33 + 33 ) )
         {
             AI_ACT_SKILL( BattleSkill.MyriadArrows );
             AI_TAR_RND();
@@ -13638,19 +13660,19 @@ void AI_YUKARI_AEGIS()
     else if ( AI_SELF_HP_PERCENT( 50 ) == 1 )
     {
         
-        if ( var159 < 30 )
+        if ( var165 < 30 )
         {
             AI_ACT_SKILL( BattleSkill.Magarudyne );
             AI_TAR_RND();
             return;
         }
-        else if ( var159 < ( 30 + 30 ) )
+        else if ( var165 < ( 30 + 30 ) )
         {
             AI_ACT_SKILL( BattleSkill.PrimalForce );
             AI_TAR_RND();
             return;
         }
-        else if ( var159 < ( ( 30 + 30 ) + 20 ) )
+        else if ( var165 < ( ( 30 + 30 ) + 20 ) )
         {
             
             if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff ) == 0 )
@@ -13690,13 +13712,13 @@ void AI_YUKARI_AEGIS()
             }
 
         }
-        else if ( var159 < ( ( ( 30 + 30 ) + 20 ) + 20 ) )
+        else if ( var165 < ( ( ( 30 + 30 ) + 20 ) + 20 ) )
         {
             
-            if ( AI_CHK_ALLY_EFFECT( SpecialEffects.UnknownBuff ) == 0 )
+            if ( AI_CHK_ALLY_EFFECT( SpecialEffects.AttackBuff ) == 0 )
             {
-                AI_ACT_SKILL( BattleSkill.Tarukaja );
-                FUNCTION_0067();
+                AI_ACT_SKILL( BattleSkill.Matarukaja );
+                AI_TAR_RND();
                 return;
             }
             else 
@@ -13722,10 +13744,10 @@ void AI_YUKARI_AEGIS()
 // Procedure Index: 240
 void AI_MIRURU_AEGIS()
 {
-    int var160;
-    int var161;
-    var160 = AI_RND( 100 );
-    var161 = AI_RND( 100 );
+    int var166;
+    int var167;
+    var166 = AI_RND( 100 );
+    var167 = AI_RND( 100 );
     
     if ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.Makarakarn ) == 1 )
     {
@@ -13742,18 +13764,18 @@ void AI_MIRURU_AEGIS()
     else if ( AI_SELF_HP_PERCENT( 50 ) == 0 )
     {
         
-        if ( var160 < 20 )
+        if ( var166 < 20 )
         {
             AI_ACT_WEAPON();
             AI_TAR_RND();
             return;
         }
-        else if ( var160 < ( 20 + 20 ) )
+        else if ( var166 < ( 20 + 20 ) )
         {
             
             if ( AI_CHK_ENEMY_STATUS( StatusEffects.Charm ) == 0 )
             {
-                AI_ACT_SKILL( BattleSkill.SexyDance );
+                AI_ACT_SKILL( 243 );
                 AI_TAR_RND();
                 return;
             }
@@ -13765,12 +13787,12 @@ void AI_MIRURU_AEGIS()
             }
 
         }
-        else if ( var160 < ( ( 20 + 20 ) + 20 ) )
+        else if ( var166 < ( ( 20 + 20 ) + 20 ) )
         {
             
             if ( AI_CHK_ENEMY_STATUS( StatusEffects.Panic ) == 0 )
             {
-                AI_ACT_SKILL( BattleSkill.Tentarafoo );
+                AI_ACT_SKILL( 249 );
                 AI_TAR_RND();
                 return;
             }
@@ -13793,19 +13815,19 @@ void AI_MIRURU_AEGIS()
     else if ( AI_SELF_HP_PERCENT( 50 ) == 1 )
     {
         
-        if ( var161 < 10 )
+        if ( var167 < 10 )
         {
             AI_ACT_WEAPON();
             AI_TAR_RND();
             return;
         }
-        else if ( var161 < ( 10 + 40 ) )
+        else if ( var167 < ( 10 + 40 ) )
         {
             AI_ACT_SKILL( BattleSkill.MindCharge );
             AI_TAR_RND();
             return;
         }
-        else if ( var161 < ( ( 10 + 40 ) + 40 ) )
+        else if ( var167 < ( ( 10 + 40 ) + 40 ) )
         {
             AI_ACT_SKILL( BattleSkill.Mabufudyne );
             AI_TAR_RND();
