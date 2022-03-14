@@ -594,64 +594,74 @@ void AI_PC_002_001()
 
     }
 
-    var14 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.AttackBuff );
-    var15 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.DefenseBuff );
-    var16 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.HitUpBuff );
-    var17 = ( ( var14 + var15 ) + var16 );
     
-    if ( ( ( AI_ENEMY_COUNT( 1 ) && ( var17 >= 1 ) ) || ( AI_ENEMY_COUNT( 3 ) && ( var17 >= 2 ) ) ) || ( AI_ENEMY_COUNT( 5 ) && ( var17 >= 3 ) ) )
+    if ( AI_HAS_SKILL( BattleSkill.Dekaja ) )
     {
+        var14 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.AttackBuff );
+        var15 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.DefenseBuff );
+        var16 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.HitUpBuff );
+        var17 = ( ( var14 + var15 ) + var16 );
         
-        if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+        if ( ( ( AI_ENEMY_COUNT( 1 ) && ( var17 >= 1 ) ) || ( AI_ENEMY_COUNT( 3 ) && ( var17 >= 2 ) ) ) || ( AI_ENEMY_COUNT( 5 ) && ( var17 >= 3 ) ) )
         {
-            var12 = 50;
-        }
-        else 
-        {
-            var12 = 100;
-        }
+            
+            if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+            {
+                var12 = 50;
+            }
+            else 
+            {
+                var12 = 100;
+            }
 
-        var13 = AI_RND( 100 );
-        
-        if ( ( var13 <= var12 ) && AI_HAS_SKILL( BattleSkill.Dekaja ) )
-        {
-            AI_ACT_SKILL( BattleSkill.Dekaja );
-            AI_TAR_RND();
-            return;
+            var13 = AI_RND( 100 );
+            
+            if ( var13 <= var12 )
+            {
+                AI_ACT_SKILL( BattleSkill.Dekaja );
+                AI_TAR_RND();
+                return;
+            }
+
         }
 
     }
 
-    var14 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.AttackDebuff );
-    var15 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.DefenseDebuff );
-    var16 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.HitUpDebuff );
-    var18 = ( ( var14 + var15 ) + var16 );
-    var14 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break1 );
-    var15 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break2 );
-    var16 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break3 );
-    var18 = ( ( ( var18 + var14 ) + var15 ) + var16 );
-    var14 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break4 );
-    var18 = ( var18 + var14 );
     
-    if ( ( AI_ALLY_COUNT( 2 ) && ( var18 >= 1 ) ) || ( AI_ALLY_COUNT( 4 ) && ( var18 >= 2 ) ) )
+    if ( AI_HAS_SKILL( BattleSkill.Dekunda ) )
     {
+        var14 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.AttackDebuff );
+        var15 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.DefenseDebuff );
+        var16 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.HitUpDebuff );
+        var18 = ( ( var14 + var15 ) + var16 );
+        var14 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break1 );
+        var15 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break2 );
+        var16 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break3 );
+        var18 = ( ( ( var18 + var14 ) + var15 ) + var16 );
+        var14 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break4 );
+        var18 = ( var18 + var14 );
         
-        if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+        if ( ( AI_ALLY_COUNT( 2 ) && ( var18 >= 1 ) ) || ( AI_ALLY_COUNT( 4 ) && ( var18 >= 2 ) ) )
         {
-            var12 = 50;
-        }
-        else 
-        {
-            var12 = 100;
-        }
+            
+            if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+            {
+                var12 = 50;
+            }
+            else 
+            {
+                var12 = 100;
+            }
 
-        var13 = AI_RND( 100 );
-        
-        if ( ( var13 <= var12 ) && AI_HAS_SKILL( BattleSkill.Dekunda ) )
-        {
-            AI_ACT_SKILL( BattleSkill.Dekunda );
-            AI_TAR_RND();
-            return;
+            var13 = AI_RND( 100 );
+            
+            if ( var13 <= var12 )
+            {
+                AI_ACT_SKILL( BattleSkill.Dekunda );
+                AI_TAR_RND();
+                return;
+            }
+
         }
 
     }
@@ -666,108 +676,119 @@ void AI_PC_002_001()
     }
     else if ( var11 <= -3 )
     {
-        var12 = 70;
+        var12 = 100;
     }
     else if ( var11 <= 0 )
     {
-        var12 = 50;
+        var12 = 80;
     }
     else if ( var11 <= 3 )
     {
-        var12 = 20;
-    }
-    else if ( FUNCTION_019D() )
-    {
-        var12 = 25;
+        var12 = 40;
     }
     else 
     {
-        var12 = 0;
+        var12 = 20;
     }
 
     var13 = AI_RND( 100 );
     
-    if ( var13 <= var12 )
+    if ( ( var13 <= var12 ) || FUNCTION_019D() )
     {
         var0 = FUNCTION_01CE( 3 );
         
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 1, 3 ) ) && AI_HAS_SKILL( BattleSkill.FireBreak ) )
+        if ( ( ( var0 != -1 ) && AI_HAS_SKILL( BattleSkill.FireBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break1 ) == 0 ) )
         {
-            AI_ACT_SKILL( BattleSkill.FireBreak );
-            AI_TAR_ID( var0 );
-            return;
+            
+            if ( FUNCTION_01CF( 1, 3 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.FireBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
+            
+            if ( FUNCTION_01CF( 5, 3 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.FireBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
+            
+            if ( FUNCTION_01CF( 10, 3 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.FireBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
         }
 
         var0 = FUNCTION_01CE( 4 );
         
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 1, 4 ) ) && AI_HAS_SKILL( BattleSkill.IceBreak ) )
+        if ( ( ( var0 != -1 ) && AI_HAS_SKILL( BattleSkill.IceBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break2 ) == 0 ) )
         {
-            AI_ACT_SKILL( BattleSkill.IceBreak );
-            AI_TAR_ID( var0 );
-            return;
+            
+            if ( FUNCTION_01CF( 1, 4 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.IceBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
+            
+            if ( FUNCTION_01CF( 4, 4 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.IceBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
         }
 
         var0 = FUNCTION_01CE( 6 );
         
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 1, 6 ) ) && AI_HAS_SKILL( BattleSkill.WindBreak ) )
+        if ( ( ( var0 != -1 ) && AI_HAS_SKILL( BattleSkill.WindBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break3 ) == 0 ) )
         {
-            AI_ACT_SKILL( BattleSkill.WindBreak );
-            AI_TAR_ID( var0 );
-            return;
+            
+            if ( FUNCTION_01CF( 1, 6 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.WindBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
+            
+            if ( FUNCTION_01CF( 2, 6 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.WindBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
+
         }
 
         var0 = FUNCTION_01CE( 5 );
         
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 1, 5 ) ) && AI_HAS_SKILL( BattleSkill.ElecBreak ) )
+        if ( ( ( var0 != -1 ) && AI_HAS_SKILL( BattleSkill.ElecBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break4 ) == 0 ) )
         {
-            AI_ACT_SKILL( BattleSkill.ElecBreak );
-            AI_TAR_ID( var0 );
-            return;
-        }
+            
+            if ( FUNCTION_01CF( 1, 5 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.ElecBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
 
-        var0 = FUNCTION_01CE( 3 );
-        
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 5, 3 ) ) && AI_HAS_SKILL( BattleSkill.FireBreak ) )
-        {
-            AI_ACT_SKILL( BattleSkill.FireBreak );
-            AI_TAR_ID( var0 );
-            return;
-        }
+            
+            if ( FUNCTION_01CF( 7, 5 ) )
+            {
+                AI_ACT_SKILL( BattleSkill.ElecBreak );
+                AI_TAR_ID( var0 );
+                return;
+            }
 
-        var0 = FUNCTION_01CE( 3 );
-        
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 10, 3 ) ) && AI_HAS_SKILL( BattleSkill.FireBreak ) )
-        {
-            AI_ACT_SKILL( BattleSkill.FireBreak );
-            AI_TAR_ID( var0 );
-            return;
-        }
-
-        var0 = FUNCTION_01CE( 6 );
-        
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 2, 6 ) ) && AI_HAS_SKILL( BattleSkill.WindBreak ) )
-        {
-            AI_ACT_SKILL( BattleSkill.WindBreak );
-            AI_TAR_ID( var0 );
-            return;
-        }
-
-        var0 = FUNCTION_01CE( 5 );
-        
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 7, 5 ) ) && AI_HAS_SKILL( BattleSkill.ElecBreak ) )
-        {
-            AI_ACT_SKILL( BattleSkill.ElecBreak );
-            AI_TAR_ID( var0 );
-            return;
-        }
-
-        var0 = FUNCTION_01CE( 4 );
-        
-        if ( ( ( var0 != -1 ) && FUNCTION_01CF( 4, 4 ) ) && AI_HAS_SKILL( BattleSkill.IceBreak ) )
-        {
-            AI_ACT_SKILL( BattleSkill.IceBreak );
-            AI_TAR_ID( var0 );
-            return;
         }
 
     }
@@ -792,7 +813,7 @@ void AI_PC_002_001()
 
     var13 = AI_RND( 100 );
     
-    if ( ( ( var13 <= var6 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) ) && AI_HAS_SKILL( BattleSkill.MindCharge ) )
+    if ( ( AI_HAS_SKILL( BattleSkill.MindCharge ) && ( var13 <= var6 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
     {
         AI_ACT_SKILL( BattleSkill.MindCharge );
         AI_TAR_RND();
@@ -819,7 +840,7 @@ void AI_PC_002_001()
 
     var13 = AI_RND( 100 );
     
-    if ( ( ( var13 <= var6 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 0 ) ) && AI_HAS_SKILL( BattleSkill.PowerCharge ) )
+    if ( ( AI_HAS_SKILL( BattleSkill.PowerCharge ) && ( var13 <= var6 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 0 ) )
     {
         AI_ACT_SKILL( BattleSkill.PowerCharge );
         AI_TAR_RND();
@@ -845,7 +866,7 @@ void AI_PC_002_001()
     }
 
     
-    if ( AI_SELF_SP_PERCENT( 10 ) && AI_HAS_SKILL( BattleSkill.SpiritDrain ) )
+    if ( AI_HAS_SKILL( BattleSkill.SpiritDrain ) && ( AI_SELF_SP_PERCENT( 10 ) == 1 ) )
     {
         AI_ACT_SKILL( BattleSkill.SpiritDrain );
         FUNCTION_0062();
@@ -856,19 +877,19 @@ void AI_PC_002_001()
     if ( AI_HAS_SKILL( 26 ) )
     {
         
-        if ( AI_SELF_SP_PERCENT( 10 ) )
+        if ( AI_SELF_SP_PERCENT( 10 ) == 1 )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
             return;
         }
-        else if ( AI_SELF_SP_PERCENT( 15 ) && AI_SELF_HP_PERCENT( 80 ) )
+        else if ( ( AI_SELF_SP_PERCENT( 15 ) == 1 ) && ( AI_SELF_HP_PERCENT( 80 ) == 1 ) )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
             return;
         }
-        else if ( AI_SELF_SP_PERCENT( 20 ) && AI_SELF_HP_PERCENT( 70 ) )
+        else if ( ( AI_SELF_SP_PERCENT( 20 ) == 1 ) && ( AI_SELF_HP_PERCENT( 70 ) == 1 ) )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
@@ -2527,7 +2548,7 @@ void AI_PC_002_004()
 
     var36 = AI_RND( 100 );
     
-    if ( ( ( var36 <= var35 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) ) && AI_HAS_SKILL( BattleSkill.MindCharge ) )
+    if ( ( AI_HAS_SKILL( BattleSkill.MindCharge ) && ( var36 <= var35 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
     {
         AI_ACT_SKILL( BattleSkill.MindCharge );
         AI_TAR_RND();
@@ -2553,7 +2574,7 @@ void AI_PC_002_004()
     }
 
     
-    if ( ( ( var36 <= var35 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 0 ) ) && AI_HAS_SKILL( BattleSkill.PowerCharge ) )
+    if ( ( AI_HAS_SKILL( BattleSkill.PowerCharge ) && ( var36 <= var35 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.PowerCharge ) == 0 ) )
     {
         AI_ACT_SKILL( BattleSkill.PowerCharge );
         AI_TAR_RND();
@@ -2983,11 +3004,11 @@ void AI_PC_002_005()
     int var51;
     int var52;
     int var53;
+    int var56;
     int var54;
     int var55;
-    int var56;
-    int var57;
     int var58;
+    int var57;
     int var59;
     var38 = 0;
     var39 = 0;
@@ -3655,32 +3676,41 @@ void AI_PC_002_005()
     
     if ( ( var52 <= var51 ) || FUNCTION_019D() )
     {
-        var42 = AI_CHK_ANY_ALLIES_EFFECT( 81 );
         
-        if ( ( ( var42 != -1 ) && AI_HAS_SKILL( 239 ) ) && AI_ALLY_COUNT( 2 ) )
+        if ( ( AI_HAS_SKILL( 239 ) && AI_ALLY_COUNT( 2 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 ) )
         {
+            var56 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff );
+            var54 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff );
+            var55 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff );
             
-            if ( AI_HAS_SKILL( 239 ) )
+            if ( ( ( var54 != -1 ) || ( var56 != -1 ) ) || ( var55 != -1 ) )
             {
                 AI_ACT_SKILL( 239 );
-                AI_TAR_ID( var42 );
+                
+                if ( var54 != -1 )
+                {
+                    AI_TAR_ID( var54 );
+                }
+                else if ( var56 != -1 )
+                {
+                    AI_TAR_ID( var56 );
+                }
+                else if ( var55 != -1 )
+                {
+                    AI_TAR_ID( var55 );
+                }
+
                 return;
             }
 
         }
 
-        var42 = AI_CHK_ANY_ALLIES_EFFECT( 65 );
         
-        if ( ( var42 != -1 ) && AI_HAS_SKILL( 247 ) )
+        if ( AI_HAS_SKILL( 247 ) && ( AI_CHK_ANY_ALLIES_EFFECT( 65 ) != -1 ) )
         {
-            
-            if ( AI_HAS_SKILL( 247 ) )
-            {
-                AI_ACT_SKILL( 247 );
-                AI_TAR_RND();
-                return;
-            }
-
+            AI_ACT_SKILL( 247 );
+            AI_TAR_RND();
+            return;
         }
 
         var42 = 0;
@@ -3709,7 +3739,6 @@ void AI_PC_002_005()
         
         if ( var52 == var38 )
         {
-            var42 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff );
             
             if ( AI_HAS_SKILL( BattleSkill.Matarukaja ) )
             {
@@ -3719,12 +3748,34 @@ void AI_PC_002_005()
             }
             else if ( AI_HAS_SKILL( 239 ) )
             {
-                AI_ACT_SKILL( 239 );
-                AI_TAR_ID( var42 );
-                return;
+                var56 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff );
+                var54 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff );
+                var55 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff );
+                
+                if ( ( ( var54 != -1 ) || ( var56 != -1 ) ) || ( var55 != -1 ) )
+                {
+                    AI_ACT_SKILL( 239 );
+                    
+                    if ( var54 != -1 )
+                    {
+                        AI_TAR_ID( var54 );
+                    }
+                    else if ( var56 != -1 )
+                    {
+                        AI_TAR_ID( var56 );
+                    }
+                    else if ( var55 != -1 )
+                    {
+                        AI_TAR_ID( var55 );
+                    }
+
+                    return;
+                }
+
             }
             else 
             {
+                var42 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff );
                 AI_ACT_SKILL( BattleSkill.Tarukaja );
                 AI_TAR_ID( var42 );
                 return;
@@ -3733,7 +3784,6 @@ void AI_PC_002_005()
         }
         else if ( var52 == var40 )
         {
-            var42 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff );
             
             if ( AI_HAS_SKILL( BattleSkill.Masukukaja ) )
             {
@@ -3749,12 +3799,34 @@ void AI_PC_002_005()
             }
             else if ( AI_HAS_SKILL( 239 ) )
             {
-                AI_ACT_SKILL( 239 );
-                AI_TAR_ID( var42 );
-                return;
+                var56 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff );
+                var54 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff );
+                var55 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff );
+                
+                if ( ( ( var54 != -1 ) || ( var56 != -1 ) ) || ( var55 != -1 ) )
+                {
+                    AI_ACT_SKILL( 239 );
+                    
+                    if ( var54 != -1 )
+                    {
+                        AI_TAR_ID( var54 );
+                    }
+                    else if ( var56 != -1 )
+                    {
+                        AI_TAR_ID( var56 );
+                    }
+                    else if ( var55 != -1 )
+                    {
+                        AI_TAR_ID( var55 );
+                    }
+
+                    return;
+                }
+
             }
             else 
             {
+                var42 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff );
                 AI_ACT_SKILL( BattleSkill.Sukukaja );
                 AI_TAR_ID( var42 );
                 return;
@@ -3763,7 +3835,6 @@ void AI_PC_002_005()
         }
         else if ( var52 == var39 )
         {
-            var42 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff );
             
             if ( AI_HAS_SKILL( BattleSkill.Marakukaja ) )
             {
@@ -3773,12 +3844,34 @@ void AI_PC_002_005()
             }
             else if ( AI_HAS_SKILL( 239 ) )
             {
-                AI_ACT_SKILL( 239 );
-                AI_TAR_ID( var42 );
-                return;
+                var56 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.AttackBuff );
+                var54 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.HitUpBuff );
+                var55 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff );
+                
+                if ( ( ( var54 != -1 ) || ( var56 != -1 ) ) || ( var55 != -1 ) )
+                {
+                    AI_ACT_SKILL( 239 );
+                    
+                    if ( var54 != -1 )
+                    {
+                        AI_TAR_ID( var54 );
+                    }
+                    else if ( var56 != -1 )
+                    {
+                        AI_TAR_ID( var56 );
+                    }
+                    else if ( var55 != -1 )
+                    {
+                        AI_TAR_ID( var55 );
+                    }
+
+                    return;
+                }
+
             }
             else 
             {
+                var42 = AI_CHK_ANY_ALLIES_EFFECT( SpecialEffects.DefenseBuff );
                 AI_ACT_SKILL( BattleSkill.Rakukaja );
                 AI_TAR_ID( var42 );
                 return;
@@ -3817,18 +3910,37 @@ void AI_PC_002_005()
     
     if ( ( var52 <= var51 ) || FUNCTION_019D() )
     {
-        var42 = AI_CHK_ANY_ENEMIES_EFFECT( 162 );
         
-        if ( ( ( var42 != -1 ) && ( AI_ENEMY_COUNT( 1 ) == 1 ) ) && AI_HAS_SKILL( 240 ) )
+        if ( ( AI_HAS_SKILL( 240 ) && ( AI_CHK_ANY_ENEMIES_EFFECT( 162 ) != -1 ) ) && ( AI_ENEMY_COUNT( 1 ) == 1 ) )
         {
-            AI_ACT_SKILL( 240 );
-            AI_TAR_ID( var42 );
-            return;
+            var58 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AttackDebuff );
+            var57 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff );
+            var59 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff );
+            
+            if ( ( ( var57 != -1 ) || ( var58 != -1 ) ) || ( var59 != -1 ) )
+            {
+                AI_ACT_SKILL( 240 );
+                
+                if ( var57 != -1 )
+                {
+                    AI_TAR_ID( var57 );
+                }
+                else if ( var58 != -1 )
+                {
+                    AI_TAR_ID( var58 );
+                }
+                else if ( var59 != -1 )
+                {
+                    AI_TAR_ID( var59 );
+                }
+
+                return;
+            }
+
         }
 
-        var42 = AI_CHK_ANY_ENEMIES_EFFECT( 160 );
         
-        if ( ( var42 != -1 ) && AI_HAS_SKILL( 248 ) )
+        if ( AI_HAS_SKILL( 248 ) && ( AI_CHK_ANY_ENEMIES_EFFECT( 160 ) != -1 ) )
         {
             AI_ACT_SKILL( 248 );
             AI_TAR_RND();
@@ -3861,7 +3973,6 @@ void AI_PC_002_005()
         
         if ( var52 == var38 )
         {
-            var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AttackBuff );
             
             if ( AI_HAS_SKILL( BattleSkill.Matarunda ) )
             {
@@ -3871,12 +3982,34 @@ void AI_PC_002_005()
             }
             else if ( AI_HAS_SKILL( 240 ) )
             {
-                AI_ACT_SKILL( 240 );
-                AI_TAR_ID( var42 );
-                return;
+                var58 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AttackDebuff );
+                var57 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff );
+                var59 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff );
+                
+                if ( ( ( var57 != -1 ) || ( var58 != -1 ) ) || ( var59 != -1 ) )
+                {
+                    AI_ACT_SKILL( 240 );
+                    
+                    if ( var57 != -1 )
+                    {
+                        AI_TAR_ID( var57 );
+                    }
+                    else if ( var58 != -1 )
+                    {
+                        AI_TAR_ID( var58 );
+                    }
+                    else if ( var59 != -1 )
+                    {
+                        AI_TAR_ID( var59 );
+                    }
+
+                    return;
+                }
+
             }
             else 
             {
+                var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AttackDebuff );
                 AI_ACT_SKILL( BattleSkill.Tarunda );
                 AI_TAR_ID( var42 );
                 return;
@@ -3885,7 +4018,6 @@ void AI_PC_002_005()
         }
         else if ( var52 == var40 )
         {
-            var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff );
             
             if ( AI_HAS_SKILL( BattleSkill.Masukunda ) )
             {
@@ -3895,12 +4027,34 @@ void AI_PC_002_005()
             }
             else if ( AI_HAS_SKILL( 240 ) )
             {
-                AI_ACT_SKILL( 240 );
-                AI_TAR_ID( var42 );
-                return;
+                var58 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AttackDebuff );
+                var57 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff );
+                var59 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff );
+                
+                if ( ( ( var57 != -1 ) || ( var58 != -1 ) ) || ( var59 != -1 ) )
+                {
+                    AI_ACT_SKILL( 240 );
+                    
+                    if ( var57 != -1 )
+                    {
+                        AI_TAR_ID( var57 );
+                    }
+                    else if ( var58 != -1 )
+                    {
+                        AI_TAR_ID( var58 );
+                    }
+                    else if ( var59 != -1 )
+                    {
+                        AI_TAR_ID( var59 );
+                    }
+
+                    return;
+                }
+
             }
             else 
             {
+                var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff );
                 AI_ACT_SKILL( BattleSkill.Sukunda );
                 AI_TAR_ID( var42 );
                 return;
@@ -3909,7 +4063,6 @@ void AI_PC_002_005()
         }
         else if ( var52 == var39 )
         {
-            var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff );
             
             if ( AI_HAS_SKILL( BattleSkill.Marakunda ) )
             {
@@ -3919,12 +4072,34 @@ void AI_PC_002_005()
             }
             else if ( AI_HAS_SKILL( 240 ) )
             {
-                AI_ACT_SKILL( 240 );
-                AI_TAR_ID( var42 );
-                return;
+                var58 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AttackDebuff );
+                var57 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff );
+                var59 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff );
+                
+                if ( ( ( var57 != -1 ) || ( var58 != -1 ) ) || ( var59 != -1 ) )
+                {
+                    AI_ACT_SKILL( 240 );
+                    
+                    if ( var57 != -1 )
+                    {
+                        AI_TAR_ID( var57 );
+                    }
+                    else if ( var58 != -1 )
+                    {
+                        AI_TAR_ID( var58 );
+                    }
+                    else if ( var59 != -1 )
+                    {
+                        AI_TAR_ID( var59 );
+                    }
+
+                    return;
+                }
+
             }
             else 
             {
+                var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.DefenseDebuff );
                 AI_ACT_SKILL( BattleSkill.Rakunda );
                 AI_TAR_ID( var42 );
                 return;
@@ -4048,64 +4223,74 @@ void AI_PC_002_005()
 
     }
 
-    var54 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.AttackBuff );
-    var55 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.DefenseBuff );
-    var56 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.HitUpBuff );
-    var57 = ( ( var54 + var55 ) + var56 );
     
-    if ( ( ( AI_ENEMY_COUNT( 1 ) && ( var57 >= 1 ) ) || ( AI_ENEMY_COUNT( 3 ) && ( var57 >= 1 ) ) ) || ( AI_ENEMY_COUNT( 5 ) && ( var57 >= 2 ) ) )
+    if ( AI_HAS_SKILL( BattleSkill.Dekaja ) )
     {
+        var54 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.AttackBuff );
+        var55 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.DefenseBuff );
+        var56 = AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.HitUpBuff );
+        var57 = ( ( var54 + var55 ) + var56 );
         
-        if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+        if ( ( ( AI_ENEMY_COUNT( 1 ) && ( var57 >= 1 ) ) || ( AI_ENEMY_COUNT( 3 ) && ( var57 >= 1 ) ) ) || ( AI_ENEMY_COUNT( 5 ) && ( var57 >= 2 ) ) )
         {
-            var51 = 100;
-        }
-        else 
-        {
-            var51 = 100;
-        }
+            
+            if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+            {
+                var51 = 100;
+            }
+            else 
+            {
+                var51 = 100;
+            }
 
-        var52 = AI_RND( 100 );
-        
-        if ( ( var52 <= var51 ) && AI_HAS_SKILL( BattleSkill.Dekaja ) )
-        {
-            AI_ACT_SKILL( BattleSkill.Dekaja );
-            AI_TAR_RND();
-            return;
+            var52 = AI_RND( 100 );
+            
+            if ( var52 <= var51 )
+            {
+                AI_ACT_SKILL( BattleSkill.Dekaja );
+                AI_TAR_RND();
+                return;
+            }
+
         }
 
     }
 
-    var54 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.AttackDebuff );
-    var55 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.DefenseDebuff );
-    var56 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.HitUpDebuff );
-    var58 = ( ( var54 + var55 ) + var56 );
-    var54 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break1 );
-    var55 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break2 );
-    var56 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break3 );
-    var58 = ( ( ( var58 + var54 ) + var55 ) + var56 );
-    var54 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break4 );
-    var58 = ( var58 + var54 );
     
-    if ( ( AI_ALLY_COUNT( 2 ) && ( var58 >= 1 ) ) || ( AI_ALLY_COUNT( 4 ) && ( var58 >= 1 ) ) )
+    if ( AI_HAS_SKILL( BattleSkill.Dekunda ) )
     {
+        var54 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.AttackDebuff );
+        var55 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.DefenseDebuff );
+        var56 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.HitUpDebuff );
+        var58 = ( ( var54 + var55 ) + var56 );
+        var54 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break1 );
+        var55 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break2 );
+        var56 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break3 );
+        var58 = ( ( ( var58 + var54 ) + var55 ) + var56 );
+        var54 = AI_CHK_NUM_ALLIES_EFFECTED( SpecialEffects.Break4 );
+        var58 = ( var58 + var54 );
         
-        if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+        if ( ( AI_ALLY_COUNT( 2 ) && ( var58 >= 1 ) ) || ( AI_ALLY_COUNT( 4 ) && ( var58 >= 1 ) ) )
         {
-            var51 = 100;
-        }
-        else 
-        {
-            var51 = 100;
-        }
+            
+            if ( ( FUNCTION_0194( 1 ) == 0 ) && ( FUNCTION_019D() == 0 ) )
+            {
+                var51 = 100;
+            }
+            else 
+            {
+                var51 = 100;
+            }
 
-        var52 = AI_RND( 100 );
-        
-        if ( ( var52 <= var51 ) && AI_HAS_SKILL( BattleSkill.Dekunda ) )
-        {
-            AI_ACT_SKILL( BattleSkill.Dekunda );
-            AI_TAR_RND();
-            return;
+            var52 = AI_RND( 100 );
+            
+            if ( var52 <= var51 )
+            {
+                AI_ACT_SKILL( BattleSkill.Dekunda );
+                AI_TAR_RND();
+                return;
+            }
+
         }
 
     }
@@ -4193,7 +4378,7 @@ void AI_PC_002_005()
 
         var42 = FUNCTION_01CE( 6 );
         
-        if ( ( ( var42 != -1 ) && AI_HAS_SKILL( BattleSkill.WindBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break4 ) == 0 ) )
+        if ( ( ( var42 != -1 ) && AI_HAS_SKILL( BattleSkill.WindBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break3 ) == 0 ) )
         {
             
             if ( FUNCTION_01CF( 1, 6 ) )
@@ -4215,7 +4400,7 @@ void AI_PC_002_005()
 
         var42 = FUNCTION_01CE( 5 );
         
-        if ( ( ( var42 != -1 ) && AI_HAS_SKILL( BattleSkill.ElecBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break3 ) == 0 ) )
+        if ( ( ( var42 != -1 ) && AI_HAS_SKILL( BattleSkill.ElecBreak ) ) && ( AI_CHK_NUM_ENEMIES_EFFECTED( SpecialEffects.Break4 ) == 0 ) )
         {
             
             if ( FUNCTION_01CF( 1, 5 ) )
@@ -4304,9 +4489,8 @@ void AI_PC_002_005()
 
     }
 
-    var42 = AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AilmentSusceptibility );
     
-    if ( ( var42 != -1 ) && AI_HAS_SKILL( 17 ) )
+    if ( ( AI_HAS_SKILL( 17 ) && ( AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.AilmentSusceptibility ) != -1 ) ) && ( AI_CHK_ANY_ENEMIES_EFFECT( SpecialEffects.HitUpDebuff ) != -1 ) )
     {
         AI_ACT_SKILL( 17 );
         AI_TAR_RND();
@@ -4328,7 +4512,7 @@ void AI_PC_002_005()
     }
 
     
-    if ( AI_SELF_SP_PERCENT( 10 ) && AI_HAS_SKILL( BattleSkill.SpiritDrain ) )
+    if ( AI_HAS_SKILL( BattleSkill.SpiritDrain ) && ( AI_SELF_SP_PERCENT( 10 ) == 1 ) )
     {
         AI_ACT_SKILL( BattleSkill.SpiritDrain );
         FUNCTION_0062();
@@ -4339,19 +4523,19 @@ void AI_PC_002_005()
     if ( AI_HAS_SKILL( 26 ) )
     {
         
-        if ( AI_SELF_SP_PERCENT( 10 ) )
+        if ( AI_SELF_SP_PERCENT( 10 ) == 1 )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
             return;
         }
-        else if ( AI_SELF_SP_PERCENT( 15 ) && AI_SELF_HP_PERCENT( 80 ) )
+        else if ( ( AI_SELF_SP_PERCENT( 15 ) == 1 ) && ( AI_SELF_HP_PERCENT( 80 ) == 1 ) )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
             return;
         }
-        else if ( AI_SELF_SP_PERCENT( 20 ) && AI_SELF_HP_PERCENT( 70 ) )
+        else if ( ( AI_SELF_SP_PERCENT( 20 ) == 1 ) && ( AI_SELF_HP_PERCENT( 70 ) == 1 ) )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
@@ -4699,7 +4883,7 @@ void AI_PC_002_006()
     }
 
     
-    if ( AI_SELF_SP_PERCENT( 10 ) && AI_HAS_SKILL( BattleSkill.SpiritDrain ) )
+    if ( AI_HAS_SKILL( BattleSkill.SpiritDrain ) && ( AI_SELF_SP_PERCENT( 30 ) == 1 ) )
     {
         AI_ACT_SKILL( BattleSkill.SpiritDrain );
         FUNCTION_0062();
@@ -4710,19 +4894,19 @@ void AI_PC_002_006()
     if ( AI_HAS_SKILL( 26 ) )
     {
         
-        if ( AI_SELF_SP_PERCENT( 10 ) )
+        if ( AI_SELF_SP_PERCENT( 30 ) == 1 )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
             return;
         }
-        else if ( AI_SELF_SP_PERCENT( 15 ) && AI_SELF_HP_PERCENT( 80 ) )
+        else if ( ( AI_SELF_SP_PERCENT( 35 ) == 1 ) && ( AI_SELF_HP_PERCENT( 80 ) == 1 ) )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();
             return;
         }
-        else if ( AI_SELF_SP_PERCENT( 20 ) && AI_SELF_HP_PERCENT( 70 ) )
+        else if ( ( AI_SELF_SP_PERCENT( 40 ) == 1 ) && ( AI_SELF_HP_PERCENT( 70 ) == 1 ) )
         {
             AI_ACT_SKILL( 26 );
             FUNCTION_0062();

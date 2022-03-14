@@ -7261,6 +7261,7 @@ void AI_Chidori()
 // Procedure Index: 116
 void AI_Jin2()
 {
+    int var51;
     int var52;
     int var53;
     int var54;
@@ -7271,7 +7272,7 @@ void AI_Jin2()
     int var59;
     int var60;
     int var61;
-    int var51;
+    var51 = 0;
     var52 = 0;
     var53 = 0;
     var54 = 0;
@@ -7280,7 +7281,6 @@ void AI_Jin2()
     var57 = 0;
     var58 = 0;
     var59 = 0;
-    var60 = 0;
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     
     if ( AI_SELF_HP_PERCENT( 75 ) == 1 )
@@ -7335,71 +7335,71 @@ void AI_Jin2()
         return;
     }
 
-    var61 = 0;
+    var60 = 0;
     
     if ( FUNCTION_0053( 0 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var52 = ( var52 + var61 );
+        var60 = ( var60 + 1 );
+        var51 = ( var51 + var60 );
     }
 
     
     if ( FUNCTION_0053( 1 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var53 = ( var53 + var61 );
+        var60 = ( var60 + 1 );
+        var52 = ( var52 + var60 );
     }
 
     
     if ( FUNCTION_0053( 2 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var54 = ( var54 + var61 );
+        var60 = ( var60 + 1 );
+        var53 = ( var53 + var60 );
     }
 
     
     if ( FUNCTION_0053( 3 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var55 = ( var55 + var61 );
+        var60 = ( var60 + 1 );
+        var54 = ( var54 + var60 );
     }
 
     
     if ( FUNCTION_0053( 4 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var56 = ( var56 + var61 );
+        var60 = ( var60 + 1 );
+        var55 = ( var55 + var60 );
     }
 
     
     if ( FUNCTION_0053( 5 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var57 = ( var57 + var61 );
+        var60 = ( var60 + 1 );
+        var56 = ( var56 + var60 );
     }
 
     
     if ( FUNCTION_0053( 6 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var58 = ( var58 + var61 );
+        var60 = ( var60 + 1 );
+        var57 = ( var57 + var60 );
     }
 
     
     if ( FUNCTION_0053( 8 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var59 = ( var59 + var61 );
+        var60 = ( var60 + 1 );
+        var58 = ( var58 + var60 );
     }
 
     
     if ( FUNCTION_0053( 9 ) == 1 )
     {
-        var61 = ( var61 + 1 );
-        var60 = ( var60 + var61 );
+        var60 = ( var60 + 1 );
+        var59 = ( var59 + var60 );
     }
 
-    var51 = ( AI_RND( var61 ) + 1 );
+    var61 = ( AI_RND( var60 ) + 1 );
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (480) = 5600
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (452) = 5572
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (452) = 5572
@@ -7407,30 +7407,30 @@ void AI_Jin2()
     
     if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 480 ) ) == 1 )
     {
-        var51 = AI_RND( 100 );
+        var61 = AI_RND( 100 );
         
         if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 452 ) ) == 0 )
         {
             
-            if ( var51 < 20 )
+            if ( var61 < 20 )
             {
                 AI_ACT_SKILL( BattleSkill.StagnantAir );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var51 < ( 20 + 20 ) )
+            else if ( var61 < ( 20 + 20 ) )
             {
                 AI_ACT_SKILL( BattleSkill.EerieSound );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var51 < ( ( 20 + 20 ) + 20 ) )
+            else if ( var61 < ( ( 20 + 20 ) + 20 ) )
             {
                 AI_ACT_SKILL( BattleSkill.SexyDance );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var51 < ( ( ( 20 + 20 ) + 20 ) + 20 ) )
+            else if ( var61 < ( ( ( 20 + 20 ) + 20 ) + 20 ) )
             {
                 AI_ACT_SKILL( BattleSkill.Infuriate );
                 AI_TAR_RND();
@@ -7447,19 +7447,19 @@ void AI_Jin2()
         else if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 452 ) ) == 1 )
         {
             
-            if ( var51 < 25 )
+            if ( var61 < 25 )
             {
                 AI_ACT_SKILL( BattleSkill.EerieSound );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var51 < ( 25 + 25 ) )
+            else if ( var61 < ( 25 + 25 ) )
             {
                 AI_ACT_SKILL( BattleSkill.SexyDance );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var51 < ( ( 25 + 25 ) + 25 ) )
+            else if ( var61 < ( ( 25 + 25 ) + 25 ) )
             {
                 AI_ACT_SKILL( BattleSkill.Infuriate );
                 AI_TAR_RND();
@@ -7478,55 +7478,55 @@ void AI_Jin2()
     else if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) ) == 1 )
     {
         
-        if ( var51 == var52 )
+        if ( var61 == var51 )
         {
             AI_ACT_SKILL( BattleSkill.FatalEnd );
             AI_TAR_WEAK( Affinity.Slash );
             return;
         }
-        else if ( var51 == var53 )
+        else if ( var61 == var52 )
         {
             AI_ACT_SKILL( BattleSkill.GiganticFist );
             AI_TAR_WEAK( Affinity.Strike );
             return;
         }
-        else if ( var51 == var54 )
+        else if ( var61 == var53 )
         {
             AI_ACT_SKILL( BattleSkill.TorrentShot );
             AI_TAR_WEAK( Affinity.Pierce );
             return;
         }
-        else if ( var51 == var55 )
+        else if ( var61 == var54 )
         {
             AI_ACT_SKILL( BattleSkill.Agidyne );
             AI_TAR_WEAK( Affinity.Fire );
             return;
         }
-        else if ( var51 == var56 )
+        else if ( var61 == var55 )
         {
             AI_ACT_SKILL( BattleSkill.Bufudyne );
             AI_TAR_WEAK( Affinity.Ice );
             return;
         }
-        else if ( var51 == var57 )
+        else if ( var61 == var56 )
         {
             AI_ACT_SKILL( BattleSkill.Ziodyne );
             AI_TAR_WEAK( Affinity.Elec );
             return;
         }
-        else if ( var51 == var58 )
+        else if ( var61 == var57 )
         {
             AI_ACT_SKILL( BattleSkill.Garudyne );
             AI_TAR_WEAK( Affinity.Wind );
             return;
         }
-        else if ( var51 == var59 )
+        else if ( var61 == var58 )
         {
             AI_ACT_SKILL( BattleSkill.Hamaon );
             AI_TAR_WEAK( Affinity.Light );
             return;
         }
-        else if ( var51 == var60 )
+        else if ( var61 == var59 )
         {
             AI_ACT_SKILL( BattleSkill.Mudoon );
             AI_TAR_WEAK( Affinity.Dark );
@@ -7534,55 +7534,55 @@ void AI_Jin2()
         }
 
     }
-    else if ( var51 == var52 )
+    else if ( var61 == var51 )
     {
         AI_ACT_SKILL( BattleSkill.BladeofFury );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var53 )
+    else if ( var61 == var52 )
     {
         AI_ACT_SKILL( BattleSkill.SwiftStrike );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var54 )
+    else if ( var61 == var53 )
     {
         AI_ACT_SKILL( BattleSkill.ArrowRain );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var55 )
+    else if ( var61 == var54 )
     {
         AI_ACT_SKILL( BattleSkill.Maragion );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var56 )
+    else if ( var61 == var55 )
     {
         AI_ACT_SKILL( BattleSkill.Mabufula );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var57 )
+    else if ( var61 == var56 )
     {
         AI_ACT_SKILL( BattleSkill.Mazionga );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var58 )
+    else if ( var61 == var57 )
     {
         AI_ACT_SKILL( BattleSkill.Magarula );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var59 )
+    else if ( var61 == var58 )
     {
         AI_ACT_SKILL( BattleSkill.Mahama );
         AI_TAR_RND();
         return;
     }
-    else if ( var51 == var60 )
+    else if ( var61 == var59 )
     {
         AI_ACT_SKILL( BattleSkill.Mamudo );
         AI_TAR_RND();
@@ -7599,37 +7599,13 @@ void AI_Takaya2()
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     
-    if ( AI_SELF_HP_PERCENT( 75 ) == 1 )
+    if ( AI_SELF_HP_PERCENT( 50 ) == 1 )
     {
         BIT_ON( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) );
     }
-    else if ( AI_SELF_HP_PERCENT( 75 ) == 0 )
-    {
-        BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) );
-    }
-
-    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
-    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
-    
-    if ( AI_SELF_HP_PERCENT( 50 ) == 1 )
-    {
-        BIT_ON( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) );
-    }
     else if ( AI_SELF_HP_PERCENT( 50 ) == 0 )
     {
-        BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) );
-    }
-
-    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (450) = 5570
-    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (450) = 5570
-    
-    if ( AI_SELF_HP_PERCENT( 25 ) == 1 )
-    {
-        BIT_ON( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 450 ) );
-    }
-    else if ( AI_SELF_HP_PERCENT( 25 ) == 0 )
-    {
-        BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 450 ) );
+        BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) );
     }
 
     var62 = AI_RND( 100 );
@@ -7637,25 +7613,25 @@ void AI_Takaya2()
     if ( AI_CHK_ONE_MORE() == 1 )
     {
         
-        if ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 )
+        if ( AI_CHK_ENEMIES_EFFECT( 162 ) != -1 )
         {
             AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-            AI_ACT_SKILL( 239 );
+            AI_ACT_SKILL( 250 );
             AI_TAR_RND();
             return;
         }
-        else if ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackBuff ) == 1 ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpBuff ) == 1 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 1 ) )
+        else if ( AI_CHK_SELF_EFFECT( 81 ) != -1 )
         {
             AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-            AI_ACT_SKILL( BattleSkill.Dekaja );
-            AI_TAR_RND();
+            AI_ACT_SKILL( 239 );
+            AI_TAR_SELF();
             return;
         }
         else if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 )
         {
             AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
             AI_ACT_SKILL( BattleSkill.MindCharge );
-            AI_TAR_RND();
+            AI_TAR_SELF();
             return;
         }
         else 
@@ -7668,20 +7644,21 @@ void AI_Takaya2()
 
     }
 
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (450) = 5570
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (448) = 5568
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (449) = 5569
+    // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (450) = 5570
     
-    if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) ) == 0 )
+    if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) ) == 0 )
     {
         
-        if ( GET_CNT( 69 ) != 1 )
+        if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) ) == 0 )
         {
-            
-            if ( GET_CNT( 69 ) != 2 )
-            {
-                SET_CNT( 69, 0 );
-            }
-
             
             if ( var62 < 15 )
             {
@@ -7690,39 +7667,39 @@ void AI_Takaya2()
                 AI_TAR_RND();
                 return;
             }
-            else if ( var62 < ( 15 + 15 ) )
+            else if ( var62 < 30 )
             {
                 AI_AFFINITY_SWITCH( 216 );
                 AI_ACT_SKILL( BattleSkill.Agidyne );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var62 < ( ( 15 + 15 ) + 15 ) )
+            else if ( var62 < 45 )
             {
                 AI_AFFINITY_SWITCH( 219 );
                 AI_ACT_SKILL( BattleSkill.Garudyne );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var62 < ( ( ( 15 + 15 ) + 15 ) + 15 ) )
+            else if ( var62 < 60 )
             {
                 AI_AFFINITY_SWITCH( 217 );
                 AI_ACT_SKILL( BattleSkill.Bufudyne );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var62 < ( ( ( ( 15 + 15 ) + 15 ) + 15 ) + 15 ) )
+            else if ( var62 < 75 )
             {
                 AI_AFFINITY_SWITCH( 218 );
                 AI_ACT_SKILL( BattleSkill.Ziodyne );
                 AI_TAR_RND();
                 return;
             }
-            else if ( ( var62 < ( ( ( ( ( 15 + 15 ) + 15 ) + 15 ) + 15 ) + 10 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
+            else if ( ( var62 < 85 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
             {
                 AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
                 AI_ACT_SKILL( BattleSkill.MindCharge );
-                AI_TAR_RND();
+                AI_TAR_SELF();
                 return;
             }
             else 
@@ -7734,73 +7711,105 @@ void AI_Takaya2()
             }
 
         }
-        else if ( GET_CNT( 69 ) == 1 )
+        else if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) ) == 1 )
         {
-            AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-            AI_ACT_SKILL( 239 );
-            AI_TAR_RND();
-            SET_CNT( 69, 2 );
-            return;
-        }
-
-    }
-    else if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) ) == 1 )
-    {
-        
-        if ( GET_CNT( 69 ) != 2 )
-        {
-            SET_CNT( 69, 1 );
+            BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) );
+            BIT_ON( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 450 ) );
             
-            if ( var62 < 5 )
+            if ( AI_CHK_SELF_EFFECT( 81 ) != -1 )
+            {
+                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+                AI_ACT_SKILL( 239 );
+                AI_TAR_SELF();
+                return;
+            }
+            else if ( AI_CHK_ENEMIES_EFFECT( 162 ) == 0 )
+            {
+                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+                AI_ACT_SKILL( 250 );
+                AI_TAR_RND();
+                return;
+            }
+            else if ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 )
+            {
+                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+                AI_ACT_SKILL( BattleSkill.MindCharge );
+                AI_TAR_SELF();
+                return;
+            }
+            else 
             {
                 AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
                 AI_ACT_SKILL( BattleSkill.PierceAttack304 );
                 AI_TAR_RND();
                 return;
             }
-            else if ( var62 < ( 5 + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 216 );
-                AI_ACT_SKILL( BattleSkill.Agidyne );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( var62 < ( ( 5 + 8 ) + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 219 );
-                AI_ACT_SKILL( BattleSkill.Garudyne );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( var62 < ( ( ( 5 + 8 ) + 8 ) + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 217 );
-                AI_ACT_SKILL( BattleSkill.Bufudyne );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( var62 < ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 218 );
-                AI_ACT_SKILL( BattleSkill.Ziodyne );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( ( ( ( var62 < ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) ) && ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackBuff ) == 1 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 1 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpBuff ) == 1 ) )
+
+        }
+
+    }
+    else if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 448 ) ) == 1 )
+    {
+        
+        if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) ) == 0 )
+        {
+            BIT_ON( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 449 ) );
+        }
+
+        
+        if ( var62 < 5 )
+        {
+            AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+            AI_ACT_SKILL( BattleSkill.PierceAttack304 );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( var62 < 15 )
+        {
+            AI_AFFINITY_SWITCH( 216 );
+            AI_ACT_SKILL( BattleSkill.Agidyne );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( var62 < 25 )
+        {
+            AI_AFFINITY_SWITCH( 219 );
+            AI_ACT_SKILL( BattleSkill.Garudyne );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( var62 < 35 )
+        {
+            AI_AFFINITY_SWITCH( 217 );
+            AI_ACT_SKILL( BattleSkill.Bufudyne );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( var62 < 45 )
+        {
+            AI_AFFINITY_SWITCH( 218 );
+            AI_ACT_SKILL( BattleSkill.Ziodyne );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( ( var62 < 60 ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
+        {
+            AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+            AI_ACT_SKILL( BattleSkill.MindCharge );
+            AI_TAR_SELF();
+            return;
+        }
+        else if ( BIT_CHK( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 450 ) ) == 0 )
+        {
+            
+            if ( ( var62 < 70 ) && ( ( ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackBuff ) == 1 ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 1 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpBuff ) == 1 ) ) )
             {
                 AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
                 AI_ACT_SKILL( BattleSkill.Dekaja );
                 AI_TAR_RND();
                 return;
             }
-            else if ( ( var62 < ( ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) + 15 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
-            {
-                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-                AI_ACT_SKILL( BattleSkill.MindCharge );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( var62 < ( ( ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) + 15 ) + 15 ) )
+            else if ( var62 < 85 )
             {
                 AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
                 AI_ACT_SKILL( BattleSkill.Mahamaon );
@@ -7816,73 +7825,26 @@ void AI_Takaya2()
             }
 
         }
-        else if ( GET_CNT( 69 ) == 2 )
+        else if ( ( var62 < 70 ) && ( AI_CHK_ENEMIES_EFFECT( 162 ) != 0 ) )
         {
-            
-            if ( var62 < 5 )
-            {
-                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-                AI_ACT_SKILL( BattleSkill.PierceAttack304 );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( var62 < ( 5 + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 216 );
-                AI_ACT_SKILL( BattleSkill.Agidyne );
-                AI_TAR_WEAK( Affinity.Fire );
-                return;
-            }
-            else if ( var62 < ( ( 5 + 8 ) + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 219 );
-                AI_ACT_SKILL( BattleSkill.Garudyne );
-                AI_TAR_WEAK( Affinity.Wind );
-                return;
-            }
-            else if ( var62 < ( ( ( 5 + 8 ) + 8 ) + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 217 );
-                AI_ACT_SKILL( BattleSkill.Bufudyne );
-                AI_TAR_WEAK( Affinity.Ice );
-                return;
-            }
-            else if ( var62 < ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) )
-            {
-                AI_AFFINITY_SWITCH( 218 );
-                AI_ACT_SKILL( BattleSkill.Ziodyne );
-                AI_TAR_WEAK( Affinity.Elec );
-                return;
-            }
-            else if ( ( ( ( var62 < ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) ) && ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.AttackBuff ) == 1 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.DefenseBuff ) == 1 ) ) || ( AI_CHK_ENEMIES_EFFECT( SpecialEffects.HitUpBuff ) == 1 ) )
-            {
-                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-                AI_ACT_SKILL( BattleSkill.Dekaja );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( ( var62 < ( ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) + 15 ) ) && ( AI_CHK_SELF_EFFECT( SpecialEffects.MindCharge ) == 0 ) )
-            {
-                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-                AI_ACT_SKILL( BattleSkill.MindCharge );
-                AI_TAR_RND();
-                return;
-            }
-            else if ( ( var62 < ( ( ( ( ( ( ( 5 + 8 ) + 8 ) + 8 ) + 8 ) + 10 ) + 15 ) + 15 ) ) && ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 ) )
-            {
-                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-                AI_ACT_SKILL( 239 );
-                AI_TAR_RND();
-                return;
-            }
-            else 
-            {
-                AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
-                AI_ACT_SKILL( BattleSkill.Megidola );
-                AI_TAR_RND();
-                return;
-            }
-
+            AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+            AI_ACT_SKILL( 250 );
+            AI_TAR_RND();
+            return;
+        }
+        else if ( ( var62 < 85 ) && ( AI_CHK_ANY_ALLIES_EFFECT( 81 ) != -1 ) )
+        {
+            AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+            AI_ACT_SKILL( 239 );
+            AI_TAR_SELF();
+            return;
+        }
+        else 
+        {
+            AI_AFFINITY_SWITCH( BattleUnit.Takaya2 );
+            AI_ACT_SKILL( BattleSkill.Megidola );
+            AI_TAR_RND();
+            return;
         }
 
     }
